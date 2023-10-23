@@ -1,0 +1,145 @@
+html{
+    font-family: montserrat;
+    color:rgb(0, 0, 0)
+}
+
+body {
+    font-family: montserrat;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: rgb(255, 255, 255);
+}
+
+.main-title{
+    font-size: 3rem;
+    margin-right: auto; /* Add space between h1 and the rest of the header */
+    margin-left: 20px;
+    line-height: 0;
+}
+
+header {
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    padding: 1rem 0;
+    text-align: center;
+    display: flex;
+    justify-content: center; /* Center the navigation and image horizontally */
+    align-items: center; /*s Center vertically */
+    border-bottom: 2px solid black;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+}
+
+section {
+    padding: 2rem;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+.description{
+    text-align: center;
+}
+
+/* Style for the background section */
+#home {
+    background-color: #ffffff; /* Set a background color for the section */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Style for the image container */
+  .image-container {
+    background-color: #fff; /* White background for the container */
+    padding: 20px; /* Add padding to create a white border */
+    max-width: 90%; /* Make the container slightly smaller than the screen */
+  }
+  
+  .image-container img {
+    max-width: 100%; /* Ensure the image doesn't exceed the container size */
+    display: block;
+    margin: 0 auto; /* Center the image horizontally */
+  }
+  
+#title-container{
+    text-align: center;
+    overflow: hidden;
+    height: 100px;
+}
+
+#title{
+    font-size: 3.5rem;
+}
+
+.social-media {
+    text-align: center;
+    margin: 20px;
+}
+
+.social-media a {
+    font-size: 24px;
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333; /* Change the color to match your design */
+}
+
+.about-container {
+    display: flex;
+    justify-content: flex-end; /* This will push the content to the right side */
+    align-items: center;
+    height: 80vh; /* 100% of the viewport height, adjust as needed */
+    padding: 20px; /* Add padding to create some space between the content and the edge of the screen */
+}
+
+.about-me-section {
+    flex: 2;
+    background-color: #ffffff; /* Background color of your "About Me" section */
+    padding: 20px; /* Add padding to the section to create some space between content and the container */
+    width: 50%; /* Adjust the width as needed */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Optional: Add a box shadow for a nice effect */
+}
+
+.image {
+    flex: 2; /* Takes up 2/3 of the available space, same as "About Me" section */
+    padding: 20px; /* Add padding to create space around the image */
+}
+
+.image img {
+    width: 100%; /* Make the image take up 100% of the "image" container's width */
+}
+
+
+.contact-description{
+    text-align: left;
+    color:rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+footer {
+    background-color:rgb(0, 0, 0);
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: auto;
+}
+
