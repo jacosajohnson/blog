@@ -105,27 +105,29 @@ h1 {
 
 .about-container {
     display: flex;
-    justify-content: flex-end; /* This will push the content to the right side */
     align-items: center;
-    height: 80vh; /* 100% of the viewport height, adjust as needed */
+    height: 100vh; /* 100% of the viewport height, adjust as needed */
     padding: 20px; /* Add padding to create some space between the content and the edge of the screen */
 }
 
+.image,
 .about-me-section {
-    flex: 2;
-    background-color: #ffffff; /* Background color of your "About Me" section */
-    padding: 20px; /* Add padding to the section to create some space between content and the container */
-    width: 50%; /* Adjust the width as needed */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Optional: Add a box shadow for a nice effect */
+    flex: 1; /* Both the image and the "About Me" container share the available space equally */
+    padding: 20px; /* Add padding to create space around the image and the "About Me" section */
 }
 
 .image {
-    flex: 2; /* Takes up 2/3 of the available space, same as "About Me" section */
-    padding: 20px; /* Add padding to create space around the image */
+    background: linear-gradient(to right, #FAA5A5 50%, #FF5757 50%); /* Create a split background with two colors */
+    padding: 20px; /* Add padding to the container */
+    height: 80vh;
+    width: auto;
 }
 
-.image img {
-    width: 100%; /* Make the image take up 100% of the "image" container's width */
+.about-me-section {
+    border: 1px solid #ccc; /* Add a 1px solid border with a color of your choice */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Add a box shadow with horizontal and vertical offset and blur radius */
+    padding: 20px; /* Add padding to the section to create space between content and the container */
+    background-color: #ffffff; /* Background color of your "About Me" section */
 }
 
 
