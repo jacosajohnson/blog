@@ -277,7 +277,7 @@ footer {
 
   /* Media query for smaller screens (e.g., smartphones) */
 @media screen and (max-width: 480px) {
-    .desktop-container {
+    .image-container {
         display: none; /* Hide the desktop image on mobile */
     }
     .mobile-image {
