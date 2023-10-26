@@ -117,9 +117,9 @@ h1 {
 }
 
 .image {
-    background: linear-gradient(to right, #FAA5A5 50%, #FF5757 50%); /* Create a split background with two colors */
+    background: linear-gradient(to right,#0CC0DF 50%, #C4F8FF 50%); /* Create a split background with two colors */
     padding: 20px; /* Add padding to the container */
-    height: 80vh;
+    height: 79vh;
     width: auto;
 }
 
@@ -146,8 +146,8 @@ footer {
 }
 
 .contact-body {
-    border-left: 50px solid #FAA5A5;
-    border-right: 50px solid #FAA5A5;
+    border-left: 50px solid #C4F8FF ;
+    border-right: 50px solid #C4F8FF ;
     margin: 0; 
     padding: 0;
     box-sizing: border-box;
@@ -198,7 +198,7 @@ footer {
   
   /* Style for the "Submit" button */
   #contact button {
-    background-color: #FF5757;
+    background-color: #0CC0DF;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -210,8 +210,62 @@ footer {
   }
   
   #contact button:hover {
-    background-color:#FAA5A5; /* Change color on hover */
+    background-color:#C4F8FF ; /* Change color on hover */
   }
 
+  .blog-post-box {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    max-width: 300px;
+    float: left;
+  }
+
+  .blog-post-link{
+    color:#0CC0DF;
+    text-decoration: none;
+  }
+
+  .blog-post-link:hover{
+    color:#C4F8FF ;
+    text-decoration: none;
+  }
+
+  /* Style for blog post images */
+  .blog-post-image {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .post-content {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px auto; /* Center the box horizontally and add vertical margin */
+    padding: 10px;
+    max-width: 800px;
+    text-align: left; /* Align the text to the left */
+  }
+  
+  /* Style for blog post images */
+  .post-image {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .post-content h1 {
+    text-align: center; /* Align the title to the left */
+    padding-left: 10px; /* Add left padding */
+    margin-top: 10px; /* Add top margin to separate from the image */
+  }
+  
+  /* Style for the blog post summary */
+  .post-content p {
+    text-align: left; /* Align the summary to the left */
+    padding-left: 10px; /* Add left padding */
+    margin-top: 5px; /* Add top margin to separate from the title */
+  }
   
 
