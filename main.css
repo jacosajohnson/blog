@@ -267,5 +267,41 @@ footer {
     padding-left: 10px; /* Add left padding */
     margin-top: 5px; /* Add top margin to separate from the title */
   }
+
+  /* Media query for smaller screens (e.g., smartphones) */
+@media screen and (max-width: 480px) {
+    .main-title {
+        font-size: 2rem;
+        margin-left: 10px; /* Adjust margins for smaller screens */
+    }
+
+    nav ul {
+        flex-direction: column; /* Change to a vertical list on smaller screens */
+    }
+
+    nav li {
+        margin: 5px 0; /* Add vertical spacing between list items */
+    }
+
+    .image {
+        display: none; /* Hide the image on smaller screens */
+    }
+
+    .about-container {
+        flex-direction: column; /* Stack the image and "About Me" section */
+    }
+
+    .about-me-section {
+        margin-top: 10px; /* Add top margin for separation */
+    }
+
+    /* Adjust other styles as needed for smaller screens */
+}
+
+
+
+
+
+
   
 
