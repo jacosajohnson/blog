@@ -67,6 +67,10 @@ h1 {
     justify-content: center;
     align-items: center;
   }
+
+  .mobile-image {
+    display: none; /* Display the mobile image on mobile screens */
+    }
   
   /* Style for the image container */
   .image-container {
@@ -138,11 +142,14 @@ h1 {
 }
 
 footer {
-    background-color:rgb(0, 0, 0);
-    color: #fff;
-    text-align: center;
+    background-color: rgb(255, 255, 255);
+    color: #000000;
     padding: 1rem 0;
-    margin-top: auto;
+    text-align: center;
+    display: flex;
+    justify-content: center; /* Center the navigation and image horizontally */
+    align-items: center; /*s Center vertically */
+    border-top: 2px solid black;
 }
 
 .contact-body {
@@ -270,6 +277,12 @@ footer {
 
   /* Media query for smaller screens (e.g., smartphones) */
 @media screen and (max-width: 480px) {
+    .desktop-container {
+        display: none; /* Hide the desktop image on mobile */
+    }
+    .mobile-image {
+        display: block; /* Display the mobile image on mobile screens */
+    }
     .main-title {
         font-size: 2rem;
         margin-left: 10px; /* Adjust margins for smaller screens */
@@ -280,7 +293,7 @@ footer {
     }
 
     nav li {
-        margin: 5px 0; /* Add vertical spacing between list items */
+        margin: 10px 0; /* Add vertical spacing between list items */
     }
 
     .image {
@@ -295,13 +308,10 @@ footer {
         margin-top: 10px; /* Add top margin for separation */
     }
 
-    /* Adjust other styles as needed for smaller screens */
+    .mobile-footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
 }
-
-
-
-
-
-
-  
-
