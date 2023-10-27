@@ -11,6 +11,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
     background-color: rgb(255, 255, 255);
+    margin-top: 30px;
 }
 
 .main-title{
@@ -29,6 +30,7 @@ header {
     justify-content: center; /* Center the navigation and image horizontally */
     align-items: center; /*s Center vertically */
     border-bottom: 2px solid black;
+    height: 30px;
 }
 
 nav ul {
@@ -68,10 +70,15 @@ h1 {
     align-items: center;
   }
 
-  .mobile-image {
-    display: none; /* Display the mobile image on mobile screens */
-    }
-  
+  .mobile-title-container{
+    display: none;
+  }
+
+  .mobile-links{
+    display: none;
+  }
+
+@media screen and (min-width: 600px){
   /* Style for the image container */
   .image-container {
     background-color: #fff; /* White background for the container */
@@ -84,6 +91,7 @@ h1 {
     display: block;
     margin: 0 auto; /* Center the image horizontally */
   }
+}
   
 #title-container{
     text-align: center;
@@ -231,18 +239,18 @@ footer {
     float: left;
   }
 
-  .blog-post-link{
+  .blog-post-link , .about-post-link{
     color:#0CC0DF;
     text-decoration: none;
   }
 
-  .blog-post-link:hover{
+  .blog-post-link:hover , .about-ppost-link:hover{
     color:#C4F8FF ;
     text-decoration: none;
   }
 
   /* Style for blog post images */
-  .blog-post-image {
+  .blog-post-image , .about-post-image {
     max-width: 100%;
     height: auto;
   }
@@ -276,42 +284,129 @@ footer {
   }
 
   /* Media query for smaller screens (e.g., smartphones) */
-@media screen and (max-width: 480px) {
+  @media screen and (max-width: 480px) {
+
+    body {
+        padding-bottom: 500px; /* Adjust the padding to match the footer's height */
+    }
+
+    #post-body{
+        padding-bottom: 100px;
+    }
+
+    #post-1-body{
+        padding-bottom: 100px;
+    }
+
+    #home {
+        padding: 0;
+        margin: 0;
+        height: auto; /* Reset the height to auto */
+    }
+
+    #mobile-block-1 {
+        width: 100%;
+        height: 15vh; /* Adjust the height to your preference */
+        background-color: #0CC0DF;
+        z-index: 1;
+        position: absolute;
+        left: 0;
+        top: 93px;
+    }
+
+    #mobile-block-2 {
+        width: 100%;
+        height: 15vh; /* Adjust the height to your preference */
+        background-color: #C4F8FF;
+        z-index: 1;
+        position: absolute;
+        left: 0;
+        top: 93px;
+        border-bottom: 1px solid black;
+    }
+
+    .mobile-title-container {
+        display: block;
+        z-index: 2;
+        position: relative;
+        text-align: center;
+        top: 0;
+    }
+
+    .mobile-title {
+        font-size: 2rem;
+        font-family: abril fatface;
+    }
+
+    .mobile-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center; /* Center vertically */
+        position: absolute;
+        top: 95%; /* Center it vertically within the section */
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #ffffff;
+        z-index: 1;
+        width: 90%;
+    }
+
+    .blog-post-box,
+    .about-post-box-mobile {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin: 10px 0; /* Add margin to separate the boxes vertically */
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        max-width: 100%;
+        float: none; /* Remove the float to stack the boxes */
+    }
+
     .image-container {
-        display: none; /* Hide the desktop image on mobile */
+        display: none;
     }
-    .mobile-image {
-        display: block; /* Display the mobile image on mobile screens */
-    }
+
     .main-title {
         font-size: 2rem;
-        margin-left: 10px; /* Adjust margins for smaller screens */
+        margin-left: 10px;
     }
 
     nav ul {
-        flex-direction: column; /* Change to a vertical list on smaller screens */
+        flex-direction: column;
     }
 
     nav li {
-        margin: 10px 0; /* Add vertical spacing between list items */
+        margin: 20px 0;
+    }
+
+    nav a{
+        padding: 10px;
     }
 
     .image {
-        display: none; /* Hide the image on smaller screens */
+        display: none;
     }
 
     .about-container {
-        flex-direction: column; /* Stack the image and "About Me" section */
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
     }
 
     .about-me-section {
-        margin-top: 10px; /* Add top margin for separation */
+        margin-top: 0px;
+        padding-bottom: 100px;
     }
 
-    .mobile-footer {
-        position: absolute;
+    footer {
+        position: fixed;
         bottom: 0;
-        left: 0;
         width: 100%;
+        background-color: #ffffff; /* Set your preferred background color */
+        text-align: center;
+        padding: 1rem 0;
+        z-index: 999; /* Ensure it's above the content */
     }
 }
