@@ -286,6 +286,10 @@ footer {
   /* Media query for smaller screens (e.g., smartphones) */
   @media screen and (max-width: 480px) {
 
+    header {
+        padding-bottom: 20px; /* Add some padding at the bottom of the header */
+    }
+
     body {
         padding-bottom: 500px; /* Adjust the padding to match the footer's height */
     }
@@ -366,7 +370,6 @@ footer {
         text-align: center;
         text-decoration: none;
         max-width: 100%;
-        margin-top: 30px;
         float: none; /* Remove the float to stack the boxes */
     }
 
