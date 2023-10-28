@@ -118,18 +118,17 @@ h1 {
 .about-container {
     display: flex;
     align-items: center;
-    height: 100vh; /* 100% of the viewport height, adjust as needed */
+    height: 50%; /* 100% of the viewport height, adjust as needed */
     padding: 20px; /* Add padding to create some space between the content and the edge of the screen */
 }
 
-.image,
 .about-me-section {
     flex: 1; /* Both the image and the "About Me" container share the available space equally */
     padding: 20px; /* Add padding to create space around the image and the "About Me" section */
+    height: 75vh;
 }
 
-.image {
-    background: linear-gradient(to right,#0CC0DF 50%, #C4F8FF 50%); /* Create a split background with two colors */
+.about-image {
     padding: 20px; /* Add padding to the container */
     height: 79vh;
     width: auto;
