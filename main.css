@@ -331,7 +331,6 @@ footer {
         position: relative;
         text-align: center;
         top: 0;
-        margin-top: 20px;
     }
 
     .mobile-title {
@@ -356,7 +355,7 @@ footer {
         background-color: #ffffff;
         z-index: 1;
         width: 90%;
-        margin-top: 70px;
+        margin-top: 100px;
     }
 
     .blog-post-box,
