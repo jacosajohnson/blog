@@ -1739,10 +1739,6 @@
         padding-bottom: 100px;
     }
 
-    .bold {
-        font-weight: 500;
-    }
-
     .home-container {
         display: flex;
         flex-direction: column;
@@ -1757,10 +1753,6 @@
     .home-image {
         width: 100%;
         height: auto;
-    }
-
-    .bold-name{
-        font-weight: bold;
     }
     
     .content-container {
@@ -1835,7 +1827,6 @@
     .blog-post-link , .about-post-link{
         color:#000000;
         text-decoration: none;
-        font-weight: bold;
     }
     
     .blog-post-link:hover , .about-post-link:hover{
