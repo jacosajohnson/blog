@@ -1,5 +1,5 @@
 
-/* Media query for mobile*/
+/*mobile*/
 @media screen and (max-width: 480px){
     html{
         font-family: 'Montserrat', sans-serif;
@@ -676,7 +676,7 @@
     .about-me-section {
         display: block;
         padding: 20px;
-        height: 90vh;
+        height: 100vh;
         font-size: 1rem;
         border: 1px solid #ccc; /* Add a 1px solid border with a color of your choice */
         box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Add a box shadow with horizontal and vertical offset and blur radius */
@@ -1047,7 +1047,7 @@
     .about-me-section {
         display: block;
         padding: 20px;
-        height: 75vh;
+        height: 100vh;
         font-size: 1rem;
         border: 1px solid #ccc; /* Add a 1px solid border with a color of your choice */
         box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Add a box shadow with horizontal and vertical offset and blur radius */
@@ -1804,12 +1804,12 @@
     .about-me-section {
         display: block;
         padding: 20px;
-        height: 80vh;
+        height: 100vh;
         font-size: 1rem;
         border: 1px solid #ccc; /* Add a 1px solid border with a color of your choice */
         box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Add a box shadow with horizontal and vertical offset and blur radius */
         background-color: #ffffff; /* Background color of your "About Me" section */
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
     
     .about-image {
@@ -2197,7 +2197,7 @@
     .about-me-section {
         display: block;
         padding: 20px;
-        height: 75vh;
+        height: 100vh;
         font-size: 1rem;
         border: 1px solid #ccc; /* Add a 1px solid border with a color of your choice */
         box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Add a box shadow with horizontal and vertical offset and blur radius */
