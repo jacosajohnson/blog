@@ -1,66 +1,335 @@
 
 /* Media query for mobile*/
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 480px){
     html{
-        font-family: montserrat;
+        font-family: 'Montserrat', sans-serif;
         color:rgb(0, 0, 0);
     }
-
+    
     header {
-        background: linear-gradient(to right, #cceef3, #76d7e8);
+        background: white;
         color: #000000;
         padding: 1rem 0;
-        text-align: center;
         display: flex;
-        justify-content: center; /* Center the navigation and image horizontally */
-        align-items: center; /*s Center vertically */
         border-bottom: 2px solid black;
-        height: 5vh;
+        height: 6vh;
         z-index: 1;
         width: 100%;
+        justify-content: right;
+        align-items: center;
     }
 
+    .home-heading h1{
+        top: 50%;
+        left: 50%;
+        padding-top: 60px;
+        padding-left: 30px;
+        padding-bottom: 30px;
+        text-align: left;
+        font-weight: 200;
+    }
+
+    .bold-name{
+        font-weight: bold;
+    }
+
+    #desktop-nav{
+        display: none;
+    }
+
+    #mobile-nav{
+        display: block;
+    }
+
+    #menu {
+        position: fixed;
+        top: 0;
+        left: -250px; /* Start the menu off-screen to the left */
+        width: 250px;
+        height: 100%;
+        background-color: #ffffff;
+        z-index: 2;
+        transition: left 0.3s; /* Add a smooth transition for sliding in and out */
+    }
+    
+    #menu.menu-visible {
+        left: 0; /* Bring the menu on-screen to the left when it's visible */
+    }
+    
+    #menu-toggle:checked + #menu-icon {
+        display: block; /* Display the hamburger menu icon when the checkbox is checked */
+    }
+    
+    #menu-toggle {
+        display: none; /* Hide the checkbox input element */
+    }
+    
+    #menu-icon {
+        position: absolute; /* Position the menu icon absolutely within the mobile-nav container */
+        top: 0;
+        left: 0;
+        z-index: 3; /* Ensure that the menu icon is above the menu when it's open */
+        padding: 10px; /* Add padding for easier clicking */
+        font-size: 25px; /* Set the font size for the icon */
+    }
+
+    #menu ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    #menu ul li a{
+        font-size: 1.5rem;
+    }
+    
+    #menu ul li {
+        text-align: center;
+        margin: 20px 0; /* Adjust the spacing between links */
+    }
+    
+    #menu ul a {
+        text-decoration: none;
+        color: #000; /* Adjust the link color as needed */
+        font-size: 20px; /* Adjust the font size as needed */
+        display: block;
+    }
+    
     section {
         padding: 2rem;
     }
-
+    
     h1 {
         font-size: 2rem;
     }
 
-    .social-media {
-        text-align: center;
-        margin: 20px;
+    body {
+        font-family: 'Montserrat', sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background-color: rgb(255, 255, 255);
+        margin-top: 0; /* Set margin-top to 0 to ensure header starts at the top */
+    }
+    
+    #post-body{
+        padding-bottom: 100px;
     }
 
-    .social-media a {
-        font-size: 24px;
-        margin: 0 10px;
+    .home-container {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .home-image-container {
+        width: 100%;
+    }
+    
+    .home-image {
+        width: 100%;
+        height: auto;
+    }
+    
+    .content-container {
+        background-color: #fff; /* Set the background color for the content */
+        padding: 20px; /* Add padding as needed */
+    }
+
+    .arrow {
+        background: #000000;
+        height: 3px;
+        width: 30px;
+        margin: 0 auto;
+        position: relative;
+        cursor: pointer;
+      
+        &:before,
+        &:after {
+          content: "";
+          background: #000000;
+          position: absolute;
+          height: 3px;
+          width: 13px;
+        }
+      
+        &:before {
+          right: -3px;
+          bottom: -3.4px;
+          transform: rotate(-46deg);
+        }
+      
+        &:after {
+          right: -3px;
+          top: -3.4px;
+          transform: rotate(46deg);
+        }
+    }
+
+    .arrow:hover {
+        color: #717272; /*rgb(123, 124, 124) color on hover */
+    }
+     
+    .mobile-links {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        background-color: #fff; /* Set the background color for the content */
+        padding-bottom: 80px;
+    }
+
+    .blog-post-box,
+    .about-post-box-mobile {
+        border: 1px solid #ccc;
+        border-radius: 2px;
+        margin: 10px; 
+        height: auto;
+        text-align: center;
         text-decoration: none;
-        color: #333; /* Change the color to match your design */
-    } 
+        max-width: 35%;
+    }
+
+    .about-post-box-mobile{
+        margin-right: 30px;
+    }
+    
+    .blog-post-link , .about-post-link{
+        color:#48767e;
+        text-decoration: none;
+    }
+
+    .blog-post-link{
+        font-size: 1rem;
+    }
+    
+    .blog-post-link:hover , .about-post-link:hover{
+        color:#535353 ;
+        text-decoration: none;
+    }
+    
+    /* Style for blog post images */
+    .blog-post-image , .about-post-image {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .blog-post-box p,
+    .about-post-box-mobile p{
+        display: none;
+    }
+    
+    .post-content {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin: 10px auto; /* Center the box horizontally and add vertical margin */
+        padding: 10px;
+        max-width: 800px;
+        text-align: left; /* Align the text to the left */
+    }
+        
+    /* Style for blog post images */
+    .post-image {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .post-content h1 {
+        text-align: center; /* Align the title to the left */
+        padding-left: 10px; /* Add left padding */
+        margin-top: 10px; /* Add top margin to separate from the image */
+    }
+        
+    /* Style for the blog post summary */
+    .post-content p {
+        text-align: left; /* Align the summary to the left */
+        padding-left: 10px; /* Add left padding */
+        margin-top: 5px; /* Add top margin to separate from the title */
+    }
+
+    .main-title {
+        font-size: 2rem;
+        margin-left: 10px;
+    }
+
+    .about-container {
+        display: block;
+        align-items: center;
+        height: 10%; /* 10% of the viewport height, adjust as needed */
+        padding: 20px; /* Add padding to create some space between the content and the edge of the screen */
+        margin-bottom: 70px;
+    }
+
+    .about-title{
+        font-size: 2rem;
+    }
+    
+    .about-me-section {
+        display: block;
+        padding: 20px;
+        height: 100%;
+        font-size: 1rem;
+        border: 1px solid #ccc; /* Add a 1px solid border with a color of your choice */
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Add a box shadow with horizontal and vertical offset and blur radius */
+        background-color: #ffffff; /* Background color of your "About Me" section */
+    }
+    
+    .about-image {
+        display: none;
+    }
+
+    .post-content {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin: 10px auto; /* Center the box horizontally and add vertical margin */
+        padding: 10px;
+        max-width: 1700px;
+        text-align: left; /* Align the text to the left */
+        }
+
+    .post-content{
+        display: block;
+        width: 90%;
+        padding: 20px; /* Add padding to create some space between the content and the edge of the screen */
+        margin-bottom: 80px;
+    }
+
+    /* Style for blog post images */
+    .post-image {
+        max-width: 100%;
+        margin: 0px auto;
+        height: auto;
+    }
+
+    .post-content h1 {
+        text-align: center; /* Align the title to the left */
+        font-size: 4rem;
+    }
+    
+    /* Style for the blog post summary */
+    .post-content p {
+        text-align: left; /* Align the summary to the left */
+        font-size: 1rem;
+    }
 
     .contact-description{
         text-align: left;
         color:rgb(0, 0, 0);
         font-weight: bold;
     }
-
+    
     .contact-body {
-        border-left: 90px solid #C4F8FF ;
-        border-right: 90px solid #C4F8FF ;
         margin: 0; 
         padding: 0;
         box-sizing: border-box;
         min-height: calc(100vh - 40px);
     }
-
+    
     /* Style for input groups */
     .input-group {
         display: block;
         margin: 10px 0; /* Adjust the margin as needed to separate input groups */
     }
-
+    
     /* Style for the Contact Me section */
     #contact {
         background-color: #f5f5f5; /* Set a background color */
@@ -68,6 +337,7 @@
         border-radius: 10px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         text-align: center;
+        height: 100vh;
     }
         
     /* Style for the "Contact Me" heading */
@@ -94,12 +364,12 @@
         border-radius: 5px;
         font-size: 14px;
         height: 30px;
-        width: 400px;
+        width: 300px;
     }
-
+        
     /* Style for the "Submit" button */
     #contact button {
-        background-color: #0CC0DF;
+        background-color:#48767e;
         color: #fff;
         border: none;
         border-radius: 5px;
@@ -109,281 +379,16 @@
         transition: background-color 0.3s;
         font-family: montserrat;
     }
-
+        
     #contact button:hover {
         background-color:#C4F8FF ; /* Change color on hover */
-    }
-
-    .blog-post-box {
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        margin: 10px;
-        padding: 10px;
-        text-align: center;
-        text-decoration: none;
-        max-width: 300px;
-        float: left;
-    }
-
-    .blog-post-link , .about-post-link{
-        color:#0CC0DF;
-        text-decoration: none;
-    }
-
-    .blog-post-link:hover , .about-ppost-link:hover{
-        color:#C4F8FF ;
-        text-decoration: none;
-    }
-
-    /* Style for blog post images */
-    .blog-post-image , .about-post-image {
-        max-width: 100%;
-        height: auto;
-    }
-
-    .post-content {
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        margin: 10px auto; /* Center the box horizontally and add vertical margin */
-        padding: 10px;
-        max-width: 800px;
-        text-align: left; /* Align the text to the left */
-    }
-
-    /* Style for blog post images */
-    .post-image {
-        max-width: 100%;
-        height: auto;
-    }
-
-    .post-content h1 {
-        text-align: center; /* Align the title to the left */
-        padding-left: 10px; /* Add left padding */
-        margin-top: 10px; /* Add top margin to separate from the image */
-    }
-
-    /* Style for the blog post summary */
-    .post-content p {
-        text-align: left; /* Align the summary to the left */
-        padding-left: 10px; /* Add left padding */
-        margin-top: 5px; /* Add top margin to separate from the title */
-    }
-
-    #mobile-nav{
-        display: block;
-    }
-
-    #menu {
-        position: fixed;
-        top: 0;
-        left: -250px; /* Start the menu off-screen to the left */
-        width: 250px;
-        height: 100%;
-        background-color: #ffffff;
-        z-index: 2;
-        transition: left 0.3s; /* Add a smooth transition for sliding in and out */
-    }
-
-    #menu.menu-visible {
-        left: 0; /* Bring the menu on-screen to the left when it's visible */
-    }
-
-    #menu-toggle:checked + #menu-icon {
-        display: block; /* Display the hamburger menu icon when the checkbox is checked */
-    }
-
-    #menu-toggle {
-        display: none; /* Hide the checkbox input element */
-    }
-
-    #menu-icon {
-        position: absolute; /* Position the menu icon absolutely within the mobile-nav container */
-        top: 0;
-        left: 0;
-        z-index: 3; /* Ensure that the menu icon is above the menu when it's open */
-        padding: 10px; /* Add padding for easier clicking */
-        font-size: 25px; /* Set the font size for the icon */
-    }
-
-    #menu-icon:hover {
-        /* Add styles for the menu icon on hover if desired */
-    }
-
-    #menu ul {
-        list-style: none;
-        padding: 0;
-    }
-
-    #menu ul li a{
-        font-size: 2rem;
-    }
-
-    #menu ul li {
-        text-align: center;
-        margin: 20px 0; /* Adjust the spacing between links */
-    }
-
-    #menu ul a {
-        text-decoration: none;
-        color: #000; /* Adjust the link color as needed */
-        font-size: 20px; /* Adjust the font size as needed */
-        display: block;
-    }
-
-    body {
-        font-family: montserrat;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-        background-color: rgb(255, 255, 255);
-        margin-top: 0; /* Set margin-top to 0 to ensure header starts at the top */
-    }
-
-    #post-body{
-        padding-bottom: 100px;
-    }
-
-    #post-1-body{
-        padding-bottom: 100px;
-    }
-
-    #title-header {
-        height: auto; /* Reset the height to auto */
-    }
-
-    .mobile-title-container {
-        display: block;
-        z-index: 1;
-        position: relative;
-        text-align: center;
-        top: 0;
-    }
-
-    .mobile-title {
-        font-size: 2rem;
-        font-family: 'Open Sans', sans-serif;
-        font-weight: 300;
-        padding-right: 5px;
-    }
-
-    .bold {
-        font-weight: 500;
-    }
-
-    .home-container{
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .mobile-links {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        height: 10%; /* 10% of the viewport height, adjust as needed */
-        padding: 20px; /* Add padding to create some space between the content and the edge of the screen */
-        padding-bottom: 100px;
-        max-width: 100vw;
-    }
-
-    .blog-post-box,
-    .about-post-box-mobile {
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        margin: 10px 0; 
-        padding: 10px;
-        height: auto;
-        text-align: center;
-        text-decoration: none;
-        max-width: 100vw;
-        margin: 5px;
-    }
-
-    .home-image-container{
-        padding-top: 10px;
-        margin: 0 auto;
-    }
-
-    .home-image{
-        max-width: 100%;
-        width: 90vw;
-    }
-
-    .about-post-box-mobile {
-        margin-top: 20px; /* Add some space between the two boxes */
-    }
-
-    .main-title {
-        font-size: 2rem;
-        margin-left: 10px;
-    }
-
-    .about-container {
-        display: flex;
-        align-items: center;
-        height: 10%; /* 10% of the viewport height, adjust as needed */
-        padding: 20px; /* Add padding to create some space between the content and the edge of the screen */
-        margin-bottom: 50px;
-    }
-
-    .about-title{
-        font-size: 2rem;
-    }
-
-    .about-me-section {
-        flex: 1; /* Both the image and the "About Me" container share the available space equally */
-        padding: 20px; /* Add padding to create space around the image and the "About Me" section */
-        height: 50%;
-        font-size: 1rem;
-    }
-
-    .about-image {
-        display: none;
-    }
-
-    .about-me-section {
-        border: 1px solid #ccc; /* Add a 1px solid border with a color of your choice */
-        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Add a box shadow with horizontal and vertical offset and blur radius */
-        padding: 20px; /* Add padding to the section to create space between content and the container */
-        background-color: #ffffff; /* Background color of your "About Me" section */
-    }
-
-    .post-content {
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        margin: 10px auto; /* Center the box horizontally and add vertical margin */
-        padding: 10px;
-        max-width: 1700px;
-        text-align: left; /* Align the text to the left */
-        }
-
-    /* Style for blog post images */
-    .post-image {
-        max-width: auto;
-        margin: 0px auto;
-        height: auto;
-    }
-
-    .post-content h1 {
-        text-align: left; /* Align the title to the left */
-        padding-left: 10px; /* Add left padding */
-        margin-top: 10px; /* Add top margin to separate from the image */
-    }
-
-    /* Style for the blog post summary */
-    .post-content p {
-        text-align: left; /* Align the summary to the left */
-        padding-left: 10px; /* Add left padding */
-        margin-top: 5px; /* Add top margin to separate from the title */
-        font-size: 1rem;
     }
 
     .social-media {
         text-align: center;
         margin: 20px;
     }
-
+    
     .social-media a {
         font-size: 25px;
         margin: 0 10px;
@@ -397,7 +402,7 @@
         position: fixed;
         bottom: 0;
         width: 100%;
-        height: 25px;
+        height: 35px;
         background-color: #ffffff;
         text-align: center;
         padding: 1rem 0;
@@ -409,174 +414,42 @@
     }
 }
 
-/* Extra small devices */
-@media screen and (min-width: 481px) and (max-width: 767px) {
+/*small devices */
+@media screen and (min-width: 481px) and (max-width: 767px){
     html{
-        font-family: montserrat;
+        font-family: 'Montserrat', sans-serif;
         color:rgb(0, 0, 0);
     }
     
     header {
-        background: linear-gradient(to right, #cceef3, #76d7e8);
+        background: white;
         color: #000000;
         padding: 1rem 0;
-        text-align: center;
         display: flex;
-        justify-content: center; /* Center the navigation and image horizontally */
-        align-items: center; /*s Center vertically */
         border-bottom: 2px solid black;
-        height: 5vh;
+        height: 6vh;
         z-index: 1;
         width: 100%;
-    }
-    
-    section {
-        padding: 2rem;
-    }
-    
-    h1 {
-        font-size: 2rem;
+        justify-content: right;
+        align-items: center;
     }
 
-    .social-media {
-        text-align: center;
-        margin: 20px;
-    }
-    
-    .social-media a {
-        font-size: 24px;
-        margin: 0 10px;
-        text-decoration: none;
-        color: #333; /* Change the color to match your design */
-    } 
-    
-    .contact-description{
+    .home-heading h1{
+        top: 50%;
+        left: 50%;
+        padding-top: 60px;
+        padding-left: 30px;
+        padding-bottom: 30px;
         text-align: left;
-        color:rgb(0, 0, 0);
+        font-weight: 200;
+    }
+
+    .bold-name{
         font-weight: bold;
     }
-    
-    .contact-body {
-        border-left: 90px solid #C4F8FF ;
-        border-right: 90px solid #C4F8FF ;
-        margin: 0; 
-        padding: 0;
-        box-sizing: border-box;
-        min-height: calc(100vh - 40px);
-    }
-    
-    /* Style for input groups */
-    .input-group {
-        display: block;
-        margin: 10px 0; /* Adjust the margin as needed to separate input groups */
-    }
-    
-    /* Style for the Contact Me section */
-    #contact {
-        background-color: #f5f5f5; /* Set a background color */
-        padding: 5px;
-        border-radius: 10px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        text-align: center;
-    }
-        
-    /* Style for the "Contact Me" heading */
-    #contact h1 {
-        font-size: 24px;
-        color: #333; /* Set the text color */
-        margin-bottom: 20px;
-    }
-        
-    /* Style for form labels */
-    #contact label {
-        display: block;
-        margin-top: 10px;
-        font-weight: bold;
-    }
-        
-    /* Style for input fields and textarea */
-    #contact input,
-    #contact textarea {
-        width: 100%;
-        padding: 5px;
-        margin: 5px 0;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        font-size: 14px;
-        height: 30px;
-        width: 400px;
-    }
-        
-    /* Style for the "Submit" button */
-    #contact button {
-        background-color: #0CC0DF;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        padding: 10px 20px;
-        font-size: 18px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-        font-family: montserrat;
-    }
-        
-    #contact button:hover {
-        background-color:#C4F8FF ; /* Change color on hover */
-    }
-    
-    .blog-post-box {
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        margin: 10px;
-        padding: 10px;
-        text-align: center;
-        text-decoration: none;
-        max-width: 300px;
-        float: left;
-    }
-    
-    .blog-post-link , .about-post-link{
-        color:#0CC0DF;
-        text-decoration: none;
-    }
-    
-    .blog-post-link:hover , .about-ppost-link:hover{
-        color:#C4F8FF ;
-        text-decoration: none;
-    }
-    
-    /* Style for blog post images */
-    .blog-post-image , .about-post-image {
-        max-width: 100%;
-        height: auto;
-    }
-    
-    .post-content {
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        margin: 10px auto; /* Center the box horizontally and add vertical margin */
-        padding: 10px;
-        max-width: 800px;
-        text-align: left; /* Align the text to the left */
-    }
-        
-    /* Style for blog post images */
-    .post-image {
-        max-width: 100%;
-        height: auto;
-    }
-    
-    .post-content h1 {
-        text-align: center; /* Align the title to the left */
-        padding-left: 10px; /* Add left padding */
-        margin-top: 10px; /* Add top margin to separate from the image */
-    }
-        
-    /* Style for the blog post summary */
-    .post-content p {
-        text-align: left; /* Align the summary to the left */
-        padding-left: 10px; /* Add left padding */
-        margin-top: 5px; /* Add top margin to separate from the title */
+
+    #desktop-nav{
+        display: none;
     }
 
     #mobile-nav{
@@ -614,10 +487,6 @@
         padding: 10px; /* Add padding for easier clicking */
         font-size: 25px; /* Set the font size for the icon */
     }
-    
-    #menu-icon:hover {
-        /* Add styles for the menu icon on hover if desired */
-    }
 
     #menu ul {
         list-style: none;
@@ -625,7 +494,7 @@
     }
 
     #menu ul li a{
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
     
     #menu ul li {
@@ -639,9 +508,17 @@
         font-size: 20px; /* Adjust the font size as needed */
         display: block;
     }
+    
+    section {
+        padding: 2rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
 
     body {
-        font-family: montserrat;
+        font-family: 'Montserrat', sans-serif;
         margin: 0;
         padding: 0;
         display: flex;
@@ -655,68 +532,128 @@
         padding-bottom: 100px;
     }
 
-    #post-1-body{
-        padding-bottom: 100px;
-    }
-
-    #title-header {
-        height: auto; /* Reset the height to auto */
-    }
-
-    .mobile-title-container {
-        display: block;
-        z-index: 1;
-        position: relative;
-        text-align: center;
-        top: 0;
-    }
-
-    .mobile-title {
-        font-size: 2rem;
-        font-family: 'Open Sans', sans-serif;
-        font-weight: 300;
-        padding-right: 5px;
-    }
-
-    .bold {
-        font-weight: 500;
-    }
-
-    .home-container{
+    .home-container {
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
     }
     
+    .home-image-container {
+        width: 100%;
+    }
+    
+    .home-image {
+        width: 100%;
+        height: auto;
+    }
+    
+    .content-container {
+        background-color: #fff; /* Set the background color for the content */
+        padding: 20px; /* Add padding as needed */
+    }
+
+    .arrow {
+        background: #000000;
+        height: 3px;
+        width: 30px;
+        margin: 0 auto;
+        position: relative;
+        cursor: pointer;
+      
+        &:before,
+        &:after {
+          content: "";
+          background: #000000;
+          position: absolute;
+          height: 3px;
+          width: 13px;
+        }
+      
+        &:before {
+          right: -3px;
+          bottom: -3.4px;
+          transform: rotate(-46deg);
+        }
+      
+        &:after {
+          right: -3px;
+          top: -3.4px;
+          transform: rotate(46deg);
+        }
+    }
+
+    .arrow:hover {
+        color: #717272; /*rgb(123, 124, 124) color on hover */
+    }
+     
     .mobile-links {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        height: 10%; /* 10% of the viewport height, adjust as needed */
-        padding: 20px; /* Add padding to create some space between the content and the edge of the screen */
-        padding-bottom: 100px;
+        background-color: #fff; /* Set the background color for the content */
+        padding-bottom: 80px;
     }
 
     .blog-post-box,
     .about-post-box-mobile {
         border: 1px solid #ccc;
-        border-radius: 5px;
-        margin: 10px 0; 
-        padding: 10px;
+        border-radius: 2px;
+        margin: 10px; 
         height: auto;
         text-align: center;
         text-decoration: none;
-        max-width: 40vw;
-        margin: 5px;
+        max-width: 40%;
     }
 
-    .home-image-container{
-        padding-top: 10px;
-        margin: 0 auto;
+    .about-post-box-mobile{
+        margin-right: 30px;
+    }
+    
+    .blog-post-link , .about-post-link{
+        color:#48767e;
+        text-decoration: none;
     }
 
-    .home-image{
+    .blog-post-link{
+        font-size: 1rem;
+    }
+    
+    .blog-post-link:hover , .about-post-link:hover{
+        color:#535353 ;
+        text-decoration: none;
+    }
+    
+    /* Style for blog post images */
+    .blog-post-image , .about-post-image {
         max-width: 100%;
-        width: 90vw;
+        height: auto;
+    }
+    
+    .post-content {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin: 10px auto; /* Center the box horizontally and add vertical margin */
+        padding: 10px;
+        max-width: 800px;
+        text-align: left; /* Align the text to the left */
+    }
+        
+    /* Style for blog post images */
+    .post-image {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .post-content h1 {
+        text-align: center; /* Align the title to the left */
+        padding-left: 10px; /* Add left padding */
+        margin-top: 10px; /* Add top margin to separate from the image */
+    }
+        
+    /* Style for the blog post summary */
+    .post-content p {
+        text-align: left; /* Align the summary to the left */
+        padding-left: 10px; /* Add left padding */
+        margin-top: 5px; /* Add top margin to separate from the title */
     }
 
     .main-title {
@@ -725,11 +662,11 @@
     }
 
     .about-container {
-        display: flex;
+        display: block;
         align-items: center;
         height: 10%; /* 10% of the viewport height, adjust as needed */
         padding: 20px; /* Add padding to create some space between the content and the edge of the screen */
-        margin-bottom: 50px;
+        margin-bottom: 70px;
     }
 
     .about-title{
@@ -737,21 +674,17 @@
     }
     
     .about-me-section {
-        flex: 1; /* Both the image and the "About Me" container share the available space equally */
-        padding: 20px; /* Add padding to create space around the image and the "About Me" section */
-        height: 50%;
+        display: block;
+        padding: 20px;
+        height: 90vh;
         font-size: 1rem;
+        border: 1px solid #ccc; /* Add a 1px solid border with a color of your choice */
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Add a box shadow with horizontal and vertical offset and blur radius */
+        background-color: #ffffff; /* Background color of your "About Me" section */
     }
     
     .about-image {
         display: none;
-    }
-    
-    .about-me-section {
-        border: 1px solid #ccc; /* Add a 1px solid border with a color of your choice */
-        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Add a box shadow with horizontal and vertical offset and blur radius */
-        padding: 20px; /* Add padding to the section to create space between content and the container */
-        background-color: #ffffff; /* Background color of your "About Me" section */
     }
 
     .post-content {
@@ -763,25 +696,102 @@
         text-align: left; /* Align the text to the left */
         }
 
+    .post-content{
+        display: block;
+        width: 90%;
+        padding: 20px; /* Add padding to create some space between the content and the edge of the screen */
+        margin-bottom: 80px;
+    }
+
     /* Style for blog post images */
     .post-image {
-        max-width: auto;
+        max-width: 100%;
         margin: 0px auto;
         height: auto;
     }
 
     .post-content h1 {
-        text-align: left; /* Align the title to the left */
-        padding-left: 10px; /* Add left padding */
-        margin-top: 10px; /* Add top margin to separate from the image */
+        text-align: center; /* Align the title to the left */
+        font-size: 4rem;
     }
     
     /* Style for the blog post summary */
     .post-content p {
         text-align: left; /* Align the summary to the left */
-        padding-left: 10px; /* Add left padding */
-        margin-top: 5px; /* Add top margin to separate from the title */
         font-size: 1rem;
+    }
+
+    .contact-description{
+        text-align: left;
+        color:rgb(0, 0, 0);
+        font-weight: bold;
+    }
+    
+    .contact-body {
+        margin: 0; 
+        padding: 0;
+        box-sizing: border-box;
+        min-height: calc(100vh - 40px);
+    }
+    
+    /* Style for input groups */
+    .input-group {
+        display: block;
+        margin: 10px 0; /* Adjust the margin as needed to separate input groups */
+    }
+    
+    /* Style for the Contact Me section */
+    #contact {
+        background-color: #f5f5f5; /* Set a background color */
+        padding: 5px;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        height: 100vh;
+    }
+        
+    /* Style for the "Contact Me" heading */
+    #contact h1 {
+        font-size: 24px;
+        color: #333; /* Set the text color */
+        margin-bottom: 20px;
+    }
+        
+    /* Style for form labels */
+    #contact label {
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+        
+    /* Style for input fields and textarea */
+    #contact input,
+    #contact textarea {
+        width: 100%;
+        padding: 5px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+        height: 30px;
+        width: 400px;
+    }
+        
+    /* Style for the "Submit" button */
+    #contact button {
+        background-color:#48767e;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 18px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        font-family: montserrat;
+    }
+        
+    #contact button:hover {
+        background-color:#C4F8FF ; /* Change color on hover */
     }
 
     .social-media {
@@ -802,7 +812,7 @@
         position: fixed;
         bottom: 0;
         width: 100%;
-        height: 25px;
+        height: 35px;
         background-color: #ffffff;
         text-align: center;
         padding: 1rem 0;
@@ -815,24 +825,63 @@
 }
 
 /* Small tablets */
-@media screen and (min-width: 768px) and (max-width: 991px) {
+@media screen and (min-width: 768px) and (max-width: 991px){
     html{
-        font-family: montserrat;
+        font-family: 'Montserrat', sans-serif;
         color:rgb(0, 0, 0);
     }
     
     header {
-        background: linear-gradient(to right, #cceef3, #76d7e8);
+        background: white;
         color: #000000;
         padding: 1rem 0;
-        text-align: center;
         display: flex;
-        justify-content: center; /* Center the navigation and image horizontally */
-        align-items: center; /*s Center vertically */
         border-bottom: 2px solid black;
-        height: 5vh;
+        height: 6vh;
         z-index: 1;
         width: 100%;
+        justify-content: right;
+        align-items: center;
+    }
+
+    .home-heading h1{
+        top: 50%;
+        left: 50%;
+        padding-top: 60px;
+        padding-left: 30px;
+        padding-bottom: 30px;
+        text-align: left;
+        font-weight: 200;
+    }
+
+    .bold-name{
+        font-weight: bold;
+    }
+
+    #mobile-nav{
+        display: none;
+    }
+
+    #desktop-nav {
+        text-align: right; /* Align the menu to the right */
+    }
+    
+    #desktop-menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    #desktop-menu li {
+        display: inline;
+        margin-left: 20px; /* Add spacing between menu items */
+    }
+    
+    #desktop-menu a {
+        text-decoration: none;
+        color: #000000;
+        font-weight: bold;
+        font-size: 1.5rem;
     }
     
     section {
@@ -843,110 +892,104 @@
         font-size: 2rem;
     }
 
-    .social-media {
-        text-align: center;
-        margin: 20px;
-    }
-    
-    .social-media a {
-        font-size: 30px;
-        margin: 0 10px;
-        text-decoration: none;
-        color: #333; /* Change the color to match your design */
-    } 
-    
-    .contact-description{
-        text-align: left;
-        color:rgb(0, 0, 0);
-        font-weight: bold;
-    }
-    
-    .contact-body {
-        border-left: 90px solid #C4F8FF ;
-        border-right: 90px solid #C4F8FF ;
-        margin: 0; 
+    body {
+        font-family: 'Montserrat', sans-serif;
+        margin: 0;
         padding: 0;
-        box-sizing: border-box;
-        min-height: calc(100vh - 40px);
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background-color: rgb(255, 255, 255);
+        margin-top: 0; /* Set margin-top to 0 to ensure header starts at the top */
     }
     
-    /* Style for input groups */
-    .input-group {
-        display: block;
-        margin: 10px 0; /* Adjust the margin as needed to separate input groups */
+    #post-body{
+        padding-bottom: 100px;
+    }
+
+    .home-container {
+        display: flex;
+        flex-direction: column;
     }
     
-    /* Style for the Contact Me section */
-    #contact {
-        background-color: #f5f5f5; /* Set a background color */
-        padding: 5px;
-        border-radius: 10px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        text-align: center;
-    }
-        
-    /* Style for the "Contact Me" heading */
-    #contact h1 {
-        font-size: 24px;
-        color: #333; /* Set the text color */
-        margin-bottom: 20px;
-    }
-        
-    /* Style for form labels */
-    #contact label {
-        display: block;
-        margin-top: 10px;
-        font-weight: bold;
-    }
-        
-    /* Style for input fields and textarea */
-    #contact input,
-    #contact textarea {
+    .home-image-container {
         width: 100%;
-        padding: 5px;
-        margin: 5px 0;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        font-size: 14px;
-        height: 30px;
-        width: 400px;
-    }
-        
-    /* Style for the "Submit" button */
-    #contact button {
-        background-color: #0CC0DF;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        padding: 10px 20px;
-        font-size: 18px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-        font-family: montserrat;
-    }
-        
-    #contact button:hover {
-        background-color:#C4F8FF ; /* Change color on hover */
     }
     
-    .blog-post-box {
+    .home-image {
+        width: 100%;
+        height: auto;
+    }
+    
+    .content-container {
+        background-color: #fff; /* Set the background color for the content */
+        padding: 20px; /* Add padding as needed */
+    }
+
+    .arrow {
+        background: #000000;
+        height: 3px;
+        width: 30px;
+        margin: 0 auto;
+        position: relative;
+        cursor: pointer;
+      
+        &:before,
+        &:after {
+          content: "";
+          background: #000000;
+          position: absolute;
+          height: 3px;
+          width: 13px;
+        }
+      
+        &:before {
+          right: -3px;
+          bottom: -3.4px;
+          transform: rotate(-46deg);
+        }
+      
+        &:after {
+          right: -3px;
+          top: -3.4px;
+          transform: rotate(46deg);
+        }
+    }
+
+    .arrow:hover {
+        color: #717272; /*rgb(123, 124, 124) color on hover */
+    }
+     
+    .mobile-links {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        background-color: #fff; /* Set the background color for the content */
+        padding-bottom: 80px;
+    }
+
+    .blog-post-box,
+    .about-post-box-mobile {
         border: 1px solid #ccc;
-        border-radius: 5px;
-        margin: 10px;
-        padding: 10px;
+        border-radius: 2px;
+        margin: 10px; 
+        height: auto;
         text-align: center;
         text-decoration: none;
-        max-width: 300px;
-        float: left;
+        max-width: 35%;
+    }
+
+    .about-post-box-mobile{
+        margin-right: 30px;
     }
     
     .blog-post-link , .about-post-link{
-        color:#0CC0DF;
+        color:#48767e;
         text-decoration: none;
     }
     
     .blog-post-link:hover , .about-ppost-link:hover{
-        color:#C4F8FF ;
+        color:#535353 ;
         text-decoration: none;
     }
     
@@ -984,153 +1027,17 @@
         margin-top: 5px; /* Add top margin to separate from the title */
     }
 
-    #mobile-nav{
-        display: block;
-    }
-
-    #menu {
-        position: fixed;
-        top: 0;
-        left: -250px; /* Start the menu off-screen to the left */
-        width: 250px;
-        height: 100%;
-        background-color: #ffffff;
-        z-index: 2;
-        transition: left 0.3s; /* Add a smooth transition for sliding in and out */
-    }
-    
-    #menu.menu-visible {
-        left: 0; /* Bring the menu on-screen to the left when it's visible */
-    }
-    
-    #menu-toggle:checked + #menu-icon {
-        display: block; /* Display the hamburger menu icon when the checkbox is checked */
-    }
-    
-    #menu-toggle {
-        display: none; /* Hide the checkbox input element */
-    }
-    
-    #menu-icon {
-        position: absolute; /* Position the menu icon absolutely within the mobile-nav container */
-        top: 0;
-        left: 0;
-        z-index: 3; /* Ensure that the menu icon is above the menu when it's open */
-        padding: 10px; /* Add padding for easier clicking */
-        font-size: 40px; /* Set the font size for the icon */
-    }
-
-    #menu ul {
-        list-style: none;
-        padding: 0;
-    }
-
-    #menu ul li a{
-        font-size: 2rem;
-    }
-    
-    #menu ul li {
-        text-align: center;
-        margin: 20px 0; /* Adjust the spacing between links */
-    }
-    
-    #menu ul a {
-        text-decoration: none;
-        color: #000; /* Adjust the link color as needed */
-        font-size: 20px; /* Adjust the font size as needed */
-        display: block;
-    }
-
-    body {
-        font-family: montserrat;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-        background-color: rgb(255, 255, 255);
-        margin-top: 0; /* Set margin-top to 0 to ensure header starts at the top */
-    }
-    
-    #post-body{
-        padding-bottom: 100px;
-    }
-
-    #post-1-body{
-        padding-bottom: 100px;
-    }
-
-    #title-header {
-        height: auto; /* Reset the height to auto */
-    }
-
-    .mobile-title-container {
-        display: block;
-        z-index: 1;
-        position: relative;
-        text-align: center;
-        top: 0;
-    }       
-
-    .mobile-title {
-        font-size: 3rem;
-        font-family: 'Open Sans', sans-serif;
-        font-weight: 300;
-        padding-right: 5px;
-    }
-
-    .bold {
-        font-weight: 500;
-    }
-
-    .home-container{
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .mobile-links {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        height: 10%; /* 10% of the viewport height, adjust as needed */
-        padding: 20px; /* Add padding to create some space between the content and the edge of the screen */
-        padding-bottom: 100px;
-    }
-
-    .blog-post-box,
-    .about-post-box-mobile {
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        margin: 10px 0; 
-        padding: 10px;
-        height: auto;
-        text-align: center;
-        text-decoration: none;
-        max-width: 30vw;
-        margin: 20px;
-    }
-
-    .home-image-container{
-        padding-top: 10px;
-        margin: 0 auto;
-    }
-
-    .home-image{
-        max-width: 100%;
-        width: 90vw;
-    }
-
     .main-title {
         font-size: 2rem;
         margin-left: 10px;
     }
 
     .about-container {
-        display: flex;
+        display: block;
         align-items: center;
         height: 10%; /* 10% of the viewport height, adjust as needed */
         padding: 20px; /* Add padding to create some space between the content and the edge of the screen */
-        margin-bottom: 50px;
+        margin-bottom: 70px;
     }
 
     .about-title{
@@ -1138,21 +1045,17 @@
     }
     
     .about-me-section {
-        flex: 1; /* Both the image and the "About Me" container share the available space equally */
-        padding: 20px; /* Add padding to create space around the image and the "About Me" section */
-        height: 50%;
-        font-size: 1.5rem;
+        display: block;
+        padding: 20px;
+        height: 75vh;
+        font-size: 1rem;
+        border: 1px solid #ccc; /* Add a 1px solid border with a color of your choice */
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Add a box shadow with horizontal and vertical offset and blur radius */
+        background-color: #ffffff; /* Background color of your "About Me" section */
     }
     
     .about-image {
         display: none;
-    }
-    
-    .about-me-section {
-        border: 1px solid #ccc; /* Add a 1px solid border with a color of your choice */
-        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Add a box shadow with horizontal and vertical offset and blur radius */
-        padding: 20px; /* Add padding to the section to create space between content and the container */
-        background-color: #ffffff; /* Background color of your "About Me" section */
     }
 
     .post-content {
@@ -1164,25 +1067,102 @@
         text-align: left; /* Align the text to the left */
         }
 
+    .post-content{
+        display: block;
+        width: 90%;
+        padding: 20px; /* Add padding to create some space between the content and the edge of the screen */
+        margin-bottom: 80px;
+    }
+
     /* Style for blog post images */
     .post-image {
-        max-width: auto;
+        max-width: 100%;
         margin: 0px auto;
         height: auto;
     }
 
     .post-content h1 {
-        text-align: left; /* Align the title to the left */
-        padding-left: 10px; /* Add left padding */
-        margin-top: 10px; /* Add top margin to separate from the image */
+        text-align: center; /* Align the title to the left */
+        font-size: 4rem;
     }
     
     /* Style for the blog post summary */
     .post-content p {
         text-align: left; /* Align the summary to the left */
-        padding-left: 10px; /* Add left padding */
-        margin-top: 5px; /* Add top margin to separate from the title */
-        font-size: 1.5rem;
+        font-size: 1rem;
+    }
+
+    .contact-description{
+        text-align: left;
+        color:rgb(0, 0, 0);
+        font-weight: bold;
+    }
+    
+    .contact-body {
+        margin: 0; 
+        padding: 0;
+        box-sizing: border-box;
+        min-height: calc(100vh - 40px);
+    }
+    
+    /* Style for input groups */
+    .input-group {
+        display: block;
+        margin: 10px 0; /* Adjust the margin as needed to separate input groups */
+    }
+    
+    /* Style for the Contact Me section */
+    #contact {
+        background-color: #f5f5f5; /* Set a background color */
+        padding: 5px;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        height: 100vh;
+    }
+        
+    /* Style for the "Contact Me" heading */
+    #contact h1 {
+        font-size: 24px;
+        color: #333; /* Set the text color */
+        margin-bottom: 20px;
+    }
+        
+    /* Style for form labels */
+    #contact label {
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+        
+    /* Style for input fields and textarea */
+    #contact input,
+    #contact textarea {
+        width: 100%;
+        padding: 5px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+        height: 30px;
+        width: 400px;
+    }
+        
+    /* Style for the "Submit" button */
+    #contact button {
+        background-color:#48767e;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 18px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        font-family: montserrat;
+    }
+        
+    #contact button:hover {
+        background-color:#C4F8FF ; /* Change color on hover */
     }
 
     .social-media {
@@ -1218,22 +1198,60 @@
 /*Large Tablets/Small desktop*/
 @media screen and (min-width:992px) and (max-width: 1199px){
     html{
-        font-family: montserrat;
+        font-family: 'Montserrat', sans-serif;
         color:rgb(0, 0, 0);
     }
     
     header {
-        background: linear-gradient(to right, #cceef3, #76d7e8);
+        background: white;
         color: #000000;
         padding: 1rem 0;
-        text-align: center;
         display: flex;
-        justify-content: center; /* Center the navigation and image horizontally */
-        align-items: center; /*s Center vertically */
         border-bottom: 2px solid black;
         height: 6vh;
         z-index: 1;
         width: 100%;
+        justify-content: right;
+    }
+
+    .home-heading h1{
+        top: 50%;
+        left: 50%;
+        padding-top: 60px;
+        padding-left: 30px;
+        padding-bottom: 30px;
+        text-align: left;
+        font-weight: 200;
+    }
+
+    .bold-name{
+        font-weight: bold;
+    }
+
+    #mobile-nav{
+        display: none;
+    }
+
+    #desktop-nav {
+        text-align: right; /* Align the menu to the right */
+    }
+    
+    #desktop-menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    #desktop-menu li {
+        display: inline;
+        margin-left: 20px; /* Add spacing between menu items */
+    }
+    
+    #desktop-menu a {
+        text-decoration: none;
+        color: #000000;
+        font-weight: bold;
+        font-size: 1.5rem;
     }
     
     section {
@@ -1244,18 +1262,206 @@
         font-size: 2rem;
     }
 
-    .social-media {
-        text-align: center;
-        margin: 20px;
+    body {
+        font-family: 'Montserrat', sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background-color: rgb(255, 255, 255);
+        margin-top: 0; /* Set margin-top to 0 to ensure header starts at the top */
     }
     
-    .social-media a {
-        font-size: 30px;
-        margin: 0 10px;
-        text-decoration: none;
-        color: #333; /* Change the color to match your design */
-    } 
+    #post-body{
+        padding-bottom: 100px;
+    }
+
+    .home-container {
+        display: flex;
+        flex-direction: column;
+    }
     
+    .home-image-container {
+        width: 100%;
+    }
+    
+    .home-image {
+        width: 100%;
+        height: auto;
+    }
+    
+    .content-container {
+        background-color: #fff; /* Set the background color for the content */
+        padding: 20px; /* Add padding as needed */
+    }
+
+    .arrow {
+        background: #000000;
+        height: 3px;
+        width: 30px;
+        margin: 0 auto;
+        position: relative;
+        cursor: pointer;
+      
+        &:before,
+        &:after {
+          content: "";
+          background: #000000;
+          position: absolute;
+          height: 3px;
+          width: 13px;
+        }
+      
+        &:before {
+          right: -3px;
+          bottom: -3.4px;
+          transform: rotate(-46deg);
+        }
+      
+        &:after {
+          right: -3px;
+          top: -3.4px;
+          transform: rotate(46deg);
+        }
+    }
+
+    .arrow:hover {
+        color: #717272; /*rgb(123, 124, 124) color on hover */
+    }
+     
+    .mobile-links {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        background-color: #fff; /* Set the background color for the content */
+        padding-bottom: 80px;
+    }
+
+    .blog-post-box,
+    .about-post-box-mobile {
+        border: 1px solid #ccc;
+        border-radius: 2px;
+        margin: 10px; 
+        height: auto;
+        text-align: center;
+        text-decoration: none;
+        max-width: 30%;
+    }
+
+    .about-post-box-mobile{
+        margin-right: 30px;
+    }
+    
+    .blog-post-link , .about-post-link{
+        color:#48767e;
+        text-decoration: none;
+    }
+    
+    .blog-post-link:hover , .about-ppost-link:hover{
+        color:#535353 ;
+        text-decoration: none;
+    }
+    
+    /* Style for blog post images */
+    .blog-post-image , .about-post-image {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .post-content {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin: 10px auto; /* Center the box horizontally and add vertical margin */
+        padding: 10px;
+        max-width: 800px;
+        text-align: left; /* Align the text to the left */
+    }
+        
+    /* Style for blog post images */
+    .post-image {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .post-content h1 {
+        text-align: center; /* Align the title to the left */
+        padding-left: 10px; /* Add left padding */
+        margin-top: 10px; /* Add top margin to separate from the image */
+    }
+        
+    /* Style for the blog post summary */
+    .post-content p {
+        text-align: left; /* Align the summary to the left */
+        padding-left: 10px; /* Add left padding */
+        margin-top: 5px; /* Add top margin to separate from the title */
+    }
+
+    .main-title {
+        font-size: 2rem;
+        margin-left: 10px;
+    }
+
+    .about-container {
+        display: block;
+        align-items: center;
+        height: 10%; /* 10% of the viewport height, adjust as needed */
+        padding: 20px; /* Add padding to create some space between the content and the edge of the screen */
+        margin-bottom: 50px;
+    }
+
+    .about-title{
+        font-size: 2rem;
+    }
+    
+    .about-me-section {
+        display: block;
+        padding: 20px;
+        height: 80vh;
+        font-size: 1rem;
+        border: 1px solid #ccc; /* Add a 1px solid border with a color of your choice */
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Add a box shadow with horizontal and vertical offset and blur radius */
+        background-color: #ffffff; /* Background color of your "About Me" section */
+    }
+    
+    .about-image {
+        display: none;
+    }
+
+    .post-content {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin: 10px auto; /* Center the box horizontally and add vertical margin */
+        padding: 10px;
+        max-width: 1700px;
+        text-align: left; /* Align the text to the left */
+        }
+
+    .post-content{
+        display: block;
+        width: 90%;
+        padding: 20px; /* Add padding to create some space between the content and the edge of the screen */
+        margin-bottom: 80px;
+    }
+
+    /* Style for blog post images */
+    .post-image {
+        max-width: 100%;
+        margin: 0px auto;
+        height: auto;
+    }
+
+    .post-content h1 {
+        text-align: center; /* Align the title to the left */
+        font-size: 4rem;
+    }
+    
+    /* Style for the blog post summary */
+    .post-content p {
+        text-align: left; /* Align the summary to the left */
+        font-size: 1rem;
+    }
+
     .contact-description{
         text-align: left;
         color:rgb(0, 0, 0);
@@ -1263,8 +1469,6 @@
     }
     
     .contact-body {
-        border-left: 90px solid #C4F8FF ;
-        border-right: 90px solid #C4F8FF ;
         margin: 0; 
         padding: 0;
         box-sizing: border-box;
@@ -1315,7 +1519,7 @@
         
     /* Style for the "Submit" button */
     #contact button {
-        background-color: #0CC0DF;
+        background-color:#48767e;
         color: #fff;
         border: none;
         border-radius: 5px;
@@ -1328,263 +1532,6 @@
         
     #contact button:hover {
         background-color:#C4F8FF ; /* Change color on hover */
-    }
-    
-    .blog-post-box {
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        margin: 10px;
-        padding: 10px;
-        text-align: center;
-        text-decoration: none;
-        max-width: 300px;
-        float: left;
-    }
-    
-    .blog-post-link , .about-post-link{
-        color:#0CC0DF;
-        text-decoration: none;
-    }
-    
-    .blog-post-link:hover , .about-ppost-link:hover{
-        color:#C4F8FF ;
-        text-decoration: none;
-    }
-    
-    /* Style for blog post images */
-    .blog-post-image , .about-post-image {
-        max-width: 100%;
-        height: auto;
-    }
-    
-    .post-content {
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        margin: 10px auto; /* Center the box horizontally and add vertical margin */
-        padding: 10px;
-        max-width: 800px;
-        text-align: left; /* Align the text to the left */
-    }
-        
-    /* Style for blog post images */
-    .post-image {
-        max-width: 100%;
-        height: auto;
-        }
-    
-    .post-content h1 {
-        text-align: center; /* Align the title to the left */
-        padding-left: 10px; /* Add left padding */
-        margin-top: 10px; /* Add top margin to separate from the image */
-    }
-        
-    /* Style for the blog post summary */
-    .post-content p {
-        text-align: left; /* Align the summary to the left */
-        padding-left: 10px; /* Add left padding */
-        margin-top: 5px; /* Add top margin to separate from the title */
-        }
-
-    #mobile-nav{
-        display: block;
-    }
-
-    #menu {
-        position: fixed;
-        top: 0;
-        left: -250px; /* Start the menu off-screen to the left */
-        width: 250px;
-        height: 100%;
-        background-color: #ffffff;
-        z-index: 2;
-        transition: left 0.3s; /* Add a smooth transition for sliding in and out */
-    }
-    
-    #menu.menu-visible {
-        left: 0; /* Bring the menu on-screen to the left when it's visible */
-    }
-    
-    #menu-toggle:checked + #menu-icon {
-        display: block; /* Display the hamburger menu icon when the checkbox is checked */
-    }
-    
-    #menu-toggle {
-        display: none; /* Hide the checkbox input element */
-    }
-    
-    #menu-icon {
-        position: absolute; /* Position the menu icon absolutely within the mobile-nav container */
-        top: 0;
-        left: 0;
-        z-index: 3; /* Ensure that the menu icon is above the menu when it's open */
-        padding: 10px; /* Add padding for easier clicking */
-        font-size: 40px; /* Set the font size for the icon */
-    }
-
-    #menu ul {
-        list-style: none;
-        padding: 0;
-    }
-
-    #menu ul li a{
-        font-size: 2rem;
-    }
-    
-    #menu ul li {
-        text-align: center;
-        margin: 20px 0; /* Adjust the spacing between links */
-    }
-    
-    #menu ul a {
-        text-decoration: none;
-        color: #000; /* Adjust the link color as needed */
-        font-size: 20px; /* Adjust the font size as needed */
-        display: block;
-    }
-
-    body {
-        font-family: montserrat;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-        background-color: rgb(255, 255, 255);
-        margin-top: 0; /* Set margin-top to 0 to ensure header starts at the top */
-    }
-    
-    #post-body{
-        padding-bottom: 100px;
-    }
-
-    #title-header {
-        height: auto; /* Reset the height to auto */
-    }
-
-    .mobile-title-container {
-        display: block;
-        z-index: 1;
-        position: relative;
-        text-align: center;
-        top: 0;
-    }       
-
-    .mobile-title {
-        font-size: 3rem;
-        font-family: 'Open Sans', sans-serif;
-        font-weight: 300;
-        padding-right: 5px;
-    }
-
-    .bold {
-        font-weight: 500;
-    }
-
-    .mobile-links {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        padding: 20px; /* Add padding to create some space between the content and the edge of the screen */
-        margin-bottom: 50px;
-        max-width: 60vw;
-    }
-
-    .home-image-container{
-        display: block;
-        max-width: 40vw;
-        float: right;
-        position: absolute;
-        right: 0;
-        padding-top: 10px;
-        padding-bottom: 80px;
-    }
-
-    .home-image{
-        max-width: 90%;
-        padding: 20px;
-    }
-
-    .blog-post-box,
-    .about-post-box-mobile {
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        margin: 10px; 
-        padding: 10px;
-        height: auto;
-        text-align: center;
-        text-decoration: none;
-        max-width: 40%;
-    }
-
-    .main-title {
-        font-size: 2rem;
-        margin-left: 10px;
-    }
-
-    .about-container {
-        display: block;
-        align-items: center;
-        height: 10%; /* 10% of the viewport height, adjust as needed */
-        padding: 20px; /* Add padding to create some space between the content and the edge of the screen */
-        margin-bottom: 50px;
-    }
-
-    .about-title{
-        font-size: 2rem;
-    }
-    
-    .about-me-section {
-        display: block;
-        padding: 20px; /* Add padding to create space around the image and the "About Me" section */
-        height: 90vh;
-        width: auto;
-        font-size: 1rem;
-        border: 1px solid #ccc; /* Add a 1px solid border with a color of your choice */
-        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Add a box shadow with horizontal and vertical offset and blur radius */
-        padding: 20px; /* Add padding to the section to create space between content and the container */
-        background-color: #ffffff; /* Background color of your "About Me" section */
-    }
-    
-    .about-image {
-        display: block;
-        padding: 20px; /* Add padding to the container */
-        height: 80vh;
-        width: auto;
-        float: left;
-        margin-bottom: 100px;
-    }
-
-    .post-content {
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        margin: 10px auto; /* Center the box horizontally and add vertical margin */
-        padding: 10px;
-        max-width: 1700px;
-        text-align: left; /* Align the text to the left */
-        }
-
-    .post-content{
-        display: block;
-        width: 50%;
-        padding: 20px; /* Add padding to create some space between the content and the edge of the screen */
-        margin-bottom: 50px;
-    }
-
-    /* Style for blog post images */
-    .post-image {
-        max-width: 100%;
-        margin: 0px auto;
-        height: auto;
-    }
-
-    .post-content h1 {
-        text-align: left; /* Align the title to the left */
-    }
-    
-    /* Style for the blog post summary */
-    .post-content p {
-        text-align: left; /* Align the summary to the left */
-        font-size: 1rem;
     }
 
     .social-media {
@@ -1618,25 +1565,48 @@
 }
 
 /* Desktops */
-/* Media query for screens with a min-width of 1200px and a max-width of 1919px */
-@media screen and (min-width: 1200px) and (max-width: 1919px) {
+@media screen and (min-width: 1200px) and (max-width: 1919px){
     html{
-        font-family: montserrat;
+        font-family: 'Montserrat', sans-serif;
         color:rgb(0, 0, 0);
     }
     
     header {
-        background: linear-gradient(to right, #cceef3, #76d7e8);
+        background: white;
         color: #000000;
         padding: 1rem 0;
-        text-align: center;
         display: flex;
-        justify-content: center; /* Center the navigation and image horizontally */
-        align-items: center; /*s Center vertically */
         border-bottom: 2px solid black;
         height: 6vh;
         z-index: 1;
         width: 100%;
+        justify-content: right;
+        align-items: center;
+    }
+
+    #mobile-nav{
+        display: none;
+    }
+
+    #desktop-nav {
+        text-align: right; /* Align the menu to the right */
+    }
+    
+    #desktop-menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    #desktop-menu li {
+        display: inline;
+        margin-left: 20px; /* Add spacing between menu items */
+    }
+    
+    #desktop-menu a {
+        text-decoration: none;
+        color: #000000;
+        font-size: 1.5rem;
     }
     
     section {
@@ -1647,65 +1617,8 @@
         font-size: 2rem;
     }
 
-    #mobile-nav{
-        display: block;
-    }
-
-    #menu {
-        position: fixed;
-        top: 0;
-        left: -250px; /* Start the menu off-screen to the left */
-        width: 250px;
-        height: 100%;
-        background-color: #ffffff;
-        z-index: 2;
-        transition: left 0.3s; /* Add a smooth transition for sliding in and out */
-    }
-    
-    #menu.menu-visible {
-        left: 0; /* Bring the menu on-screen to the left when it's visible */
-    }
-    
-    #menu-toggle:checked + #menu-icon {
-        display: block; /* Display the hamburger menu icon when the checkbox is checked */
-    }
-    
-    #menu-toggle {
-        display: none; /* Hide the checkbox input element */
-    }
-    
-    #menu-icon {
-        position: absolute; /* Position the menu icon absolutely within the mobile-nav container */
-        top: 0;
-        left: 0;
-        z-index: 3; /* Ensure that the menu icon is above the menu when it's open */
-        padding: 10px; /* Add padding for easier clicking */
-        font-size: 40px; /* Set the font size for the icon */
-    }
-
-    #menu ul {
-        list-style: none;
-        padding: 0;
-    }
-
-    #menu ul li a{
-        font-size: 2rem;
-    }
-    
-    #menu ul li {
-        text-align: center;
-        margin: 20px 0; /* Adjust the spacing between links */
-    }
-    
-    #menu ul a {
-        text-decoration: none;
-        color: #000; /* Adjust the link color as needed */
-        font-size: 20px; /* Adjust the font size as needed */
-        display: block;
-    }
-
     body {
-        font-family: montserrat;
+        font-family: 'Montserrat', sans-serif;
         margin: 0;
         padding: 0;
         display: flex;
@@ -1715,6 +1628,233 @@
         margin-top: 0; /* Set margin-top to 0 to ensure header starts at the top */
     }
     
+    #post-body{
+        padding-bottom: 100px;
+    }
+
+    .bold {
+        font-weight: 500;
+    }
+
+    .home-container {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .home-image-container {
+        width: 100%;
+        height: 50vh;
+        overflow: hidden;
+    }
+    
+    .home-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .home-heading h1{
+        top: 50%;
+        left: 50%;
+        padding-top: 60px;
+        padding-left: 30px;
+        padding-bottom: 30px;
+        text-align: left;
+        font-weight: 200;
+    }
+
+    .bold-name{
+        font-weight: bold;
+    }
+    
+    .content-container {
+        background-color: #fff; /* Set the background color for the content */
+        padding: 20px; /* Add padding as needed */
+    }
+
+    .more-button {
+        display: inline-block;
+        color: #fff; /* Set the text color */
+        text-decoration: none; /* Remove underlines from links */
+        padding: 10px 20px; /* Adjust padding to your preference */
+        border-radius: 5px; /* Add rounded corners to the button */
+        font-size: 18px;
+        font-family: montserrat;
+        transition: white 0.3s; /* Add a smooth background color transition on hover */
+    }
+      
+    .arrow {
+        background: #000000;
+        height: 3px;
+        width: 30px;
+        margin: 0 auto;
+        position: relative;
+        cursor: pointer;
+      
+        &:before,
+        &:after {
+          content: "";
+          background: #000000;
+          position: absolute;
+          height: 3px;
+          width: 13px;
+        }
+      
+        &:before {
+          right: -3px;
+          bottom: -3.4px;
+          transform: rotate(-46deg);
+        }
+      
+        &:after {
+          right: -3px;
+          top: -3.4px;
+          transform: rotate(46deg);
+        }
+    }
+
+    .arrow:hover {
+        color: #717272; /*rgb(123, 124, 124) color on hover */
+    }
+     
+    .mobile-links {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        background-color: #fff; /* Set the background color for the content */
+        padding-bottom: 80px;
+    }
+
+    .blog-post-box,
+    .about-post-box-mobile {
+        border: 1px solid #ccc;
+        border-radius: 2px;
+        margin: 10px; 
+        height: auto;
+        text-align: center;
+        text-decoration: none;
+        max-width: 20%;
+    }
+    
+    .blog-post-link , .about-post-link{
+        color:#000000;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    
+    .blog-post-link:hover , .about-post-link:hover{
+        color:#757575 ;
+        text-decoration: none;
+    }
+    
+    /* Style for blog post images */
+    .blog-post-image , .about-post-image {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .blog-post-box p , .about-post-box-mobile p{
+        font-weight: 200;
+    }
+    
+    .post-content {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin: 10px auto; /* Center the box horizontally and add vertical margin */
+        padding: 10px;
+        max-width: 800px;
+        text-align: left; /* Align the text to the left */
+    }
+        
+    /* Style for blog post images */
+    .post-image {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .post-content h1 {
+        text-align: center; /* Align the title to the left */
+        padding-left: 10px; /* Add left padding */
+        margin-top: 10px; /* Add top margin to separate from the image */
+    }
+        
+    /* Style for the blog post summary */
+    .post-content p {
+        text-align: left; /* Align the summary to the left */
+        padding-left: 10px; /* Add left padding */
+        margin-top: 5px; /* Add top margin to separate from the title */
+    }
+
+    .main-title {
+        font-size: 2rem;
+        margin-left: 10px;
+    }
+
+    .about-container {
+        display: block;
+        align-items: center;
+        height: 10%; /* 10% of the viewport height, adjust as needed */
+        padding: 20px; /* Add padding to create some space between the content and the edge of the screen */
+        margin-bottom: 50px;
+    }
+
+    .about-title{
+        font-size: 2rem;
+    }
+    
+    .about-me-section {
+        display: block;
+        padding: 20px;
+        height: 80vh;
+        font-size: 1rem;
+        border: 1px solid #ccc; /* Add a 1px solid border with a color of your choice */
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Add a box shadow with horizontal and vertical offset and blur radius */
+        background-color: #ffffff; /* Background color of your "About Me" section */
+        margin-bottom: 30px;
+    }
+    
+    .about-image {
+        display: flex;
+        flex-wrap: wrap;
+        float: left;
+        width: 25vw;
+        height: auto;
+        padding-right: 20px;
+    }
+
+    .post-content {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin: 10px auto; /* Center the box horizontally and add vertical margin */
+        padding: 10px;
+        max-width: 1700px;
+        text-align: left; /* Align the text to the left */
+        }
+
+    .post-content{
+        display: block;
+        width: 90%;
+        padding: 20px; /* Add padding to create some space between the content and the edge of the screen */
+        margin-bottom: 80px;
+    }
+
+    /* Style for blog post images */
+    .post-image {
+        max-width: 100%;
+        margin: 0px auto;
+        height: auto;
+    }
+
+    .post-content h1 {
+        text-align: center; /* Align the title to the left */
+        font-size: 4rem;
+    }
+    
+    /* Style for the blog post summary */
+    .post-content p {
+        text-align: left; /* Align the summary to the left */
+        font-size: 1rem;
+    }
+
     .contact-description{
         text-align: left;
         color:rgb(0, 0, 0);
@@ -1722,8 +1862,6 @@
     }
     
     .contact-body {
-        border-left: 90px solid #C4F8FF ;
-        border-right: 90px solid #C4F8FF ;
         margin: 0; 
         padding: 0;
         box-sizing: border-box;
@@ -1743,6 +1881,7 @@
         border-radius: 10px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         text-align: center;
+        height: 100vh;
     }
         
     /* Style for the "Contact Me" heading */
@@ -1774,7 +1913,7 @@
         
     /* Style for the "Submit" button */
     #contact button {
-        background-color: #0CC0DF;
+        background-color:#48767e;
         color: #fff;
         border: none;
         border-radius: 5px;
@@ -1787,152 +1926,6 @@
         
     #contact button:hover {
         background-color:#C4F8FF ; /* Change color on hover */
-    }
-    
-    .blog-post-link , .about-post-link{
-        color:#0CC0DF;
-        text-decoration: none;
-    }
-    
-    .blog-post-link:hover , .about-ppost-link:hover{
-        color:#C4F8FF ;
-        text-decoration: none;
-    }
-    
-    /* Style for blog post images */
-    .blog-post-image , .about-post-image {
-        max-width: 100%;
-        height: auto;
-    }
-    
-    .post-content {
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        margin: 10px auto; /* Center the box horizontally and add vertical margin */
-        padding: 10px;
-        max-width: 800px;
-        text-align: left; /* Align the text to the left */
-    }
-        
-    /* Style for blog post images */
-    .post-image {
-        max-width: 100%;
-        height: auto;
-        margin: 0px auto;
-    }
-    
-    .post-content h1 {
-        text-align: center; /* Align the title to the left */
-        padding-left: 10px; /* Add left padding */
-        margin-top: 10px; /* Add top margin to separate from the image */
-    }
-        
-    /* Style for the blog post summary */
-    .post-content p {
-        text-align: left; /* Align the summary to the left */
-        padding-left: 10px; /* Add left padding */
-        margin-top: 5px; /* Add top margin to separate from the title */
-        font-size: 1rem;
-    }
-
-    .post-content{
-        display: block;
-        width: 50%;
-        padding: 20px;
-        margin-bottom: 50px;
-    }
-    
-    #post-body{
-        padding-bottom: 100px;
-    }
-
-    /*Title styling*/
-    .mobile-title-container {
-        display: block;
-        z-index: 1;
-        position: relative;
-        text-align: center;
-        top: 0;
-    }       
-
-    .mobile-title {
-        font-size: 3rem;
-        font-family: 'Open Sans', sans-serif;
-        font-weight: 300;
-        padding-right: 5px;
-    }
-
-    .bold {
-        font-weight: 500;
-    }
-
-    .mobile-links {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        height: 10%; /* 10% of the viewport height*/
-        padding: 20px;
-        margin-bottom: 50px;
-        max-width: 50vw;
-    }
-
-    .home-image-container{
-        display: block;
-        max-width: 50vw;
-        float: right;
-        position: absolute;
-        right: 0;
-        padding-top: 10px;
-        padding-bottom: 100px;
-    }
-
-    .home-image{
-        max-width: 90%;
-        padding: 30px;
-    }
-
-    .blog-post-box,
-    .about-post-box-mobile {
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        margin: 10px 0; 
-        padding: 10px;
-        height: auto;
-        text-align: center;
-        text-decoration: none;
-        max-width: 40%;
-        margin: 20px;
-    }
-
-    .about-container {
-        display: flex;
-        align-items: center;
-        height: 10%; /* 10% of the viewport height, adjust as needed */
-        padding: 20px; /* Add padding to create some space between the content and the edge of the screen */
-        margin-bottom: 50px;
-    }
-
-    .about-title{
-        font-size: 2rem;
-    }
-    
-    .about-me-section {
-        flex: 1; /* Both the image and the "About Me" container share the available space equally */
-        padding: 20px; /* Add padding to create space around the image and the "About Me" section */
-        height: 85vh;
-        width: auto;
-        font-size: 1rem;
-        border: 1px solid #ccc; /* Add a 1px solid border with a color of your choice */
-        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Add a box shadow with horizontal and vertical offset and blur radius */
-        padding: 20px; /* Add padding to the section to create space between content and the container */
-        background-color: #ffffff; /* Background color of your "About Me" section */
-    }
-    
-    .about-image {
-        padding: 20px; /* Add padding to the container */
-        height: 80vh;
-        width: auto;
-        float: left;
     }
 
     .social-media {
@@ -1965,83 +1958,48 @@
     }
 }
 
-
-/* Extra large screens */
-@media screen and (min-width: 1920px) {
+@media screen and (min-width: 1920px){
     html{
-        font-family: montserrat;
+        font-family: 'Montserrat', sans-serif;
         color:rgb(0, 0, 0);
     }
     
     header {
-        background: linear-gradient(to right, #cceef3, #76d7e8);
+        background: white;
         color: #000000;
         padding: 1rem 0;
-        text-align: center;
         display: flex;
-        justify-content: center; /* Center the navigation and image horizontally */
-        align-items: center; /*s Center vertically */
         border-bottom: 2px solid black;
         height: 6vh;
         z-index: 1;
         width: 100%;
+        justify-content: right;
+        align-items: center;
     }
 
     #mobile-nav{
-        display: block;
+        display: none;
     }
 
-    #menu {
-        position: fixed;
-        top: 0;
-        left: -250px; /* Start the menu off-screen to the left */
-        width: 250px;
-        height: 100%;
-        background-color: #ffffff;
-        z-index: 2;
-        transition: left 0.3s; /* Add a smooth transition for sliding in and out */
+    #desktop-nav {
+        text-align: right; /* Align the menu to the right */
     }
     
-    #menu.menu-visible {
-        left: 0; /* Bring the menu on-screen to the left when it's visible */
-    }
-    
-    #menu-toggle:checked + #menu-icon {
-        display: block; /* Display the hamburger menu icon when the checkbox is checked */
-    }
-    
-    #menu-toggle {
-        display: none; /* Hide the checkbox input element */
-    }
-    
-    #menu-icon {
-        position: absolute; /* Position the menu icon absolutely within the mobile-nav container */
-        top: 0;
-        left: 0;
-        z-index: 3; /* Ensure that the menu icon is above the menu when it's open */
-        padding: 10px; /* Add padding for easier clicking */
-        font-size: 40px; /* Set the font size for the icon */
-    }
-
-    #menu ul {
+    #desktop-menu ul {
         list-style: none;
         padding: 0;
-    }
-
-    #menu ul li a{
-        font-size: 2rem;
+        margin: 0;
     }
     
-    #menu ul li {
-        text-align: center;
-        margin: 20px 0; /* Adjust the spacing between links */
+    #desktop-menu li {
+        display: inline;
+        margin-left: 20px; /* Add spacing between menu items */
     }
     
-    #menu ul a {
+    #desktop-menu a {
         text-decoration: none;
-        color: #000; /* Adjust the link color as needed */
-        font-size: 20px; /* Adjust the font size as needed */
-        display: block;
+        color: #000000;
+        font-size: 1.5rem;
     }
     
     section {
@@ -2051,7 +2009,245 @@
     h1 {
         font-size: 2rem;
     }
+
+    body {
+        font-family: 'Montserrat', sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background-color: rgb(255, 255, 255);
+        margin-top: 0; /* Set margin-top to 0 to ensure header starts at the top */
+    }
     
+    #post-body{
+        padding-bottom: 100px;
+    }
+
+    .bold {
+        font-weight: 500;
+    }
+
+    .home-container {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .home-image-container {
+        width: 100%;
+        height: 50vh;
+        overflow: hidden;
+    }
+    
+    .home-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .home-heading h1{
+        top: 50%;
+        left: 50%;
+        padding-top: 60px;
+        padding-left: 30px;
+        padding-bottom: 30px;
+        text-align: left;
+        font-weight: 200;
+    }
+
+    .bold-name{
+        font-weight: bold;
+    }
+    
+    .content-container {
+        background-color: #fff; /* Set the background color for the content */
+        padding: 20px; /* Add padding as needed */
+    }
+
+    .more-button {
+        display: inline-block;
+        color: #fff; /* Set the text color */
+        text-decoration: none; /* Remove underlines from links */
+        padding: 10px 20px; /* Adjust padding to your preference */
+        border-radius: 5px; /* Add rounded corners to the button */
+        font-size: 18px;
+        font-family: montserrat;
+        transition: white 0.3s; /* Add a smooth background color transition on hover */
+    }
+      
+    .arrow {
+        background: #000000;
+        height: 3px;
+        width: 30px;
+        margin: 0 auto;
+        position: relative;
+        cursor: pointer;
+      
+        &:before,
+        &:after {
+          content: "";
+          background: #000000;
+          position: absolute;
+          height: 3px;
+          width: 13px;
+        }
+      
+        &:before {
+          right: -3px;
+          bottom: -3.4px;
+          transform: rotate(-46deg);
+        }
+      
+        &:after {
+          right: -3px;
+          top: -3.4px;
+          transform: rotate(46deg);
+        }
+    }
+
+    .arrow:hover {
+        color: #717272; /*rgb(123, 124, 124) color on hover */
+    }
+     
+    .mobile-links {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        background-color: #fff; /* Set the background color for the content */
+        padding-bottom: 80px;
+    }
+
+    .blog-post-box,
+    .about-post-box-mobile {
+        border: 1px solid #ccc;
+        border-radius: 2px;
+        margin: 10px; 
+        height: auto;
+        text-align: center;
+        text-decoration: none;
+        max-width: 20%;
+    }
+    
+    .blog-post-link , .about-post-link{
+        color:#000000;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    
+    .blog-post-link:hover , .about-post-link:hover{
+        color:#757575 ;
+        text-decoration: none;
+    }
+    
+    /* Style for blog post images */
+    .blog-post-image , .about-post-image {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .blog-post-box p , .about-post-box-mobile p{
+        font-weight: 200;
+    }
+    
+    .post-content {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin: 10px auto; /* Center the box horizontally and add vertical margin */
+        padding: 10px;
+        max-width: 800px;
+        text-align: left; /* Align the text to the left */
+    }
+        
+    /* Style for blog post images */
+    .post-image {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .post-content h1 {
+        text-align: center; /* Align the title to the left */
+        padding-left: 10px; /* Add left padding */
+        margin-top: 10px; /* Add top margin to separate from the image */
+    }
+        
+    /* Style for the blog post summary */
+    .post-content p {
+        text-align: left; /* Align the summary to the left */
+        padding-left: 10px; /* Add left padding */
+        margin-top: 5px; /* Add top margin to separate from the title */
+    }
+
+    .main-title {
+        font-size: 2rem;
+        margin-left: 10px;
+    }
+
+    .about-container {
+        display: block;
+        align-items: center;
+        height: 10%; /* 10% of the viewport height, adjust as needed */
+        padding: 20px; /* Add padding to create some space between the content and the edge of the screen */
+        margin-bottom: 50px;
+    }
+
+    .about-title{
+        font-size: 2rem;
+    }
+    
+    .about-me-section {
+        display: block;
+        padding: 20px;
+        height: 75vh;
+        font-size: 1rem;
+        border: 1px solid #ccc; /* Add a 1px solid border with a color of your choice */
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Add a box shadow with horizontal and vertical offset and blur radius */
+        background-color: #ffffff; /* Background color of your "About Me" section */
+        margin-bottom: 30px;
+    }
+    
+    .about-image {
+        display: flex;
+        flex-wrap: wrap;
+        float: left;
+        width: 30vw;
+        height: auto;
+        padding-right: 20px;
+    }
+
+    .post-content {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin: 10px auto; /* Center the box horizontally and add vertical margin */
+        padding: 10px;
+        max-width: 1700px;
+        text-align: left; /* Align the text to the left */
+        }
+
+    .post-content{
+        display: block;
+        width: 90%;
+        padding: 20px; /* Add padding to create some space between the content and the edge of the screen */
+        margin-bottom: 80px;
+    }
+
+    /* Style for blog post images */
+    .post-image {
+        max-width: 100%;
+        margin: 0px auto;
+        height: auto;
+    }
+
+    .post-content h1 {
+        text-align: center; /* Align the title to the left */
+        font-size: 4rem;
+    }
+    
+    /* Style for the blog post summary */
+    .post-content p {
+        text-align: left; /* Align the summary to the left */
+        font-size: 1rem;
+    }
+
     .contact-description{
         text-align: left;
         color:rgb(0, 0, 0);
@@ -2059,12 +2255,9 @@
     }
     
     .contact-body {
-        border-left: 90px solid #C4F8FF ;
-        border-right: 90px solid #C4F8FF ;
         margin: 0; 
         padding: 0;
         box-sizing: border-box;
-        min-height: calc(100vh - 40px);
     }
     
     /* Style for input groups */
@@ -2076,21 +2269,22 @@
     /* Style for the Contact Me section */
     #contact {
         background-color: #f5f5f5; /* Set a background color */
-        padding: 5px;
+        padding: 50px;
         border-radius: 10px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         text-align: center;
+        height: 100vh;
     }
         
     /* Style for the "Contact Me" heading */
     #contact h1 {
-        font-size: 24px;
+        font-size: 32px;
         color: #333; /* Set the text color */
         margin-bottom: 20px;
     }
         
     /* Style for form labels */
-        #contact label {
+    #contact label {
         display: block;
         margin-top: 10px;
         font-weight: bold;
@@ -2111,7 +2305,7 @@
         
     /* Style for the "Submit" button */
     #contact button {
-        background-color: #0CC0DF;
+        background-color:#48767e;
         color: #fff;
         border: none;
         border-radius: 5px;
@@ -2124,164 +2318,6 @@
         
     #contact button:hover {
         background-color:#C4F8FF ; /* Change color on hover */
-    }
-    
-    .blog-post-box {
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        margin: 10px;
-        padding: 10px;
-        text-align: center;
-        text-decoration: none;
-        max-width: 300px;
-        float: left;
-    }
-    
-    .blog-post-link , .about-post-link{
-        color:#0CC0DF;
-        text-decoration: none;
-    }
-    
-    .blog-post-link:hover , .about-ppost-link:hover{
-        color:#C4F8FF ;
-        text-decoration: none;
-    }
-    
-    /* Style for blog post images */
-    .blog-post-image , .about-post-image {
-        max-width: 100%;
-        height: auto;
-    }
-
-    body {
-        font-family: montserrat;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-        background-color: rgb(255, 255, 255);
-        margin-top: 0; /* Set margin-top to 0 to ensure header starts at the top */
-    }
-    
-    #post-body{
-        padding-bottom: 100px;
-    }
-
-    .mobile-title-container {
-        display: block;
-        z-index: 1;
-        position: relative;
-        text-align: center;
-        top: 0;
-    }       
-
-    .mobile-title {
-        font-size: 3rem;
-        font-family: 'Open Sans', sans-serif;
-        font-weight: 300;
-        padding-right: 5px;
-    }
-
-    .bold {
-        font-weight: 500;
-    }
-
-    .mobile-links {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        height: 10%; /* 10% of the viewport height, adjust as needed */
-        padding: 20px; /* Add padding to create some space between the content and the edge of the screen */
-        margin-bottom: 50px;
-        padding-left: 90px;
-    }
-
-    .home-image-container{
-        display: block;
-        max-width: 50vw;
-        float: right;
-        position: absolute;
-        right: 0;
-        padding-top: 10px;
-    }
-
-    .home-image{
-        max-width: 90%;
-        padding: 30px;
-    }
-
-    .blog-post-box,
-    .about-post-box-mobile {
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        margin: 10px 0; 
-        padding: 10px;
-        height: auto;
-        text-align: center;
-        text-decoration: none;
-        max-width: 20%;
-        margin: 20px;
-    }
-
-    .about-container {
-        display: flex;
-        align-items: center;
-        height: 10%; /* 10% of the viewport height, adjust as needed */
-        padding: 20px; /* Add padding to create some space between the content and the edge of the screen */
-        margin-bottom: 50px;
-    }
-
-    .about-title{
-        font-size: 2rem;
-    }
-    
-    .about-me-section {
-        flex: 1; /* Both the image and the "About Me" container share the available space equally */
-        padding: 20px; /* Add padding to create space around the image and the "About Me" section */
-        height: 95vh;
-        width: auto;
-        font-size: 1rem;
-        border: 1px solid #ccc; /* Add a 1px solid border with a color of your choice */
-        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Add a box shadow with horizontal and vertical offset and blur radius */
-        padding: 20px; /* Add padding to the section to create space between content and the container */
-        background-color: #ffffff; /* Background color of your "About Me" section */
-    }
-    
-    .about-image {
-        padding: 20px; /* Add padding to the container */
-        height: 80vh;
-        width: auto;
-        float: left;
-    }
-
-    .post-content {
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        margin: 10px auto; /* Center the box horizontally and add vertical margin */
-        padding: 10px;
-        max-width: 800px;
-        text-align: left; /* Align the text to the left */
-        margin-bottom: 100px;
-    }
-
-    /* Style for blog post images */
-    .post-image {
-        max-width: 100%;
-        margin: 0px auto;
-        height: auto;
-    }
-
-    .post-content h1 {
-        text-align: center; /* Align the title to the left */
-        padding-left: 10px; /* Add left padding */
-        margin-top: 10px; /* Add top margin to separate from the image */
-    }
-    
-    /* Style for the blog post summary */
-    .post-content p {
-        text-align: left; /* Align the summary to the left */
-        font-size: 1rem;
     }
 
     .social-media {
@@ -2313,4 +2349,3 @@
         border-top: 2px solid black;
     }
 }
-
