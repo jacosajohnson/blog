@@ -41,6 +41,15 @@
         display: block;
     }
 
+    .mobile-title{
+        position: absolute;
+        top: 0;
+        right: 0px;
+        padding-top: 10px;
+        padding-right: 10px;
+        font-size: 1.5rem;
+    }
+
     #menu {
         position: fixed;
         top: 0;
@@ -66,16 +75,17 @@
     
     #menu-icon {
         position: absolute; /* Position the menu icon absolutely within the mobile-nav container */
-        top: 0;
+        top: 20px;
         left: 0;
         z-index: 3; /* Ensure that the menu icon is above the menu when it's open */
-        padding: 10px; /* Add padding for easier clicking */
-        font-size: 25px; /* Set the font size for the icon */
+        padding-left: 20px;
+        font-size: 32px; /* Set the font size for the icon */
     }
 
     #menu ul {
         list-style: none;
         padding: 0;
+        padding-top: 3px;
     }
 
     #menu ul li a{
@@ -448,6 +458,15 @@
         font-weight: bold;
     }
 
+    .mobile-title{
+        position: absolute;
+        top: 0;
+        right: 0px;
+        padding-top: 3px;
+        padding-right: 10px;
+        font-size: 1.5rem;
+    }
+
     #desktop-nav{
         display: none;
     }
@@ -481,16 +500,17 @@
     
     #menu-icon {
         position: absolute; /* Position the menu icon absolutely within the mobile-nav container */
-        top: 0;
+        top: 20px;
         left: 0;
         z-index: 3; /* Ensure that the menu icon is above the menu when it's open */
-        padding: 10px; /* Add padding for easier clicking */
-        font-size: 25px; /* Set the font size for the icon */
+        padding-left: 20px;
+        font-size: 32px; /* Set the font size for the icon */
     }
 
     #menu ul {
         list-style: none;
         padding: 0;
+        padding-top: 3px;
     }
 
     #menu ul li a{
@@ -626,6 +646,10 @@
     .blog-post-image , .about-post-image {
         max-width: 100%;
         height: auto;
+    }
+
+    #blog-posts-heading{
+        padding-left: 5px;
     }
     
     .post-content {
@@ -839,9 +863,6 @@
         border-bottom: 2px solid black;
         height: 6vh;
         z-index: 1;
-        width: 100%;
-        justify-content: right;
-        align-items: center;
     }
 
     .home-heading h1{
@@ -854,34 +875,75 @@
         font-weight: 200;
     }
 
-    .bold-name{
-        font-weight: bold;
+    .mobile-title{
+        position: absolute;
+        top: 0;
+        right: 0px;
+        padding-top: 3px;
+        padding-right: 10px;
+        font-size: 2rem;
     }
 
-    #mobile-nav{
+    #desktop-nav{
         display: none;
     }
 
-    #desktop-nav {
-        text-align: right; /* Align the menu to the right */
+    #mobile-nav{
+        display: block;
+    }
+
+    #menu {
+        position: fixed;
+        top: 0;
+        left: -250px; /* Start the menu off-screen to the left */
+        width: 250px;
+        height: 100%;
+        background-color: #ffffff;
+        z-index: 2;
+        transition: left 0.3s; /* Add a smooth transition for sliding in and out */
     }
     
-    #desktop-menu ul {
+    #menu.menu-visible {
+        left: 0; /* Bring the menu on-screen to the left when it's visible */
+    }
+    
+    #menu-toggle:checked + #menu-icon {
+        display: block; /* Display the hamburger menu icon when the checkbox is checked */
+    }
+    
+    #menu-toggle {
+        display: none; /* Hide the checkbox input element */
+    }
+    
+    #menu-icon {
+        position: absolute; /* Position the menu icon absolutely within the mobile-nav container */
+        top: 20px;
+        left: 0;
+        z-index: 3; /* Ensure that the menu icon is above the menu when it's open */
+        padding-left: 20px;
+        font-size: 32px; /* Set the font size for the icon */
+    }
+
+    #menu ul {
         list-style: none;
         padding: 0;
-        margin: 0;
+        padding-top: 3px;
     }
-    
-    #desktop-menu li {
-        display: inline;
-        margin-left: 20px; /* Add spacing between menu items */
-    }
-    
-    #desktop-menu a {
-        text-decoration: none;
-        color: #000000;
-        font-weight: bold;
+
+    #menu ul li a{
         font-size: 1.5rem;
+    }
+    
+    #menu ul li {
+        text-align: center;
+        margin: 20px 0; /* Adjust the spacing between links */
+    }
+    
+    #menu ul a {
+        text-decoration: none;
+        color: #000; /* Adjust the link color as needed */
+        font-size: 20px; /* Adjust the font size as needed */
+        display: block;
     }
     
     section {
@@ -981,6 +1043,10 @@
 
     .about-post-box-mobile{
         margin-right: 30px;
+    }
+
+    #blog-posts-heading{
+        padding-left: 10px;
     }
     
     .blog-post-link , .about-post-link{
@@ -1211,17 +1277,22 @@
         height: 6vh;
         z-index: 1;
         width: 100%;
-        justify-content: right;
+        align-items: center;
     }
 
     .home-heading h1{
         top: 50%;
         left: 50%;
-        padding-top: 60px;
+        padding-top: 20px;
         padding-left: 30px;
         padding-bottom: 30px;
         text-align: left;
         font-weight: 200;
+    }
+
+    .desktop-title{
+        margin: 0;
+        width: 40vw;
     }
 
     .bold-name{
@@ -1233,7 +1304,16 @@
     }
 
     #desktop-nav {
-        text-align: right; /* Align the menu to the right */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #desktop-menu{
+        position: absolute;
+        top: 15px;
+        right: 0;
+        padding-right: 15px;
     }
     
     #desktop-menu ul {
@@ -1288,7 +1368,7 @@
     
     .home-image {
         width: 100%;
-        height: auto;
+        height: 50vh;
     }
     
     .content-container {
@@ -1315,13 +1395,13 @@
       
         &:before {
           right: -3px;
-          bottom: -3.4px;
+          bottom: -4px;
           transform: rotate(-46deg);
         }
       
         &:after {
           right: -3px;
-          top: -3.4px;
+          top: -4px;
           transform: rotate(46deg);
         }
     }
@@ -1351,6 +1431,10 @@
 
     .about-post-box-mobile{
         margin-right: 30px;
+    }
+
+    #blog-posts-heading{
+        padding-left: 10px;
     }
     
     .blog-post-link , .about-post-link{
@@ -1407,7 +1491,7 @@
         align-items: center;
         height: 10%; /* 10% of the viewport height, adjust as needed */
         padding: 20px; /* Add padding to create some space between the content and the edge of the screen */
-        margin-bottom: 50px;
+        margin-bottom: 70px;
     }
 
     .about-title{
@@ -1580,8 +1664,22 @@
         height: 6vh;
         z-index: 1;
         width: 100%;
-        justify-content: right;
         align-items: center;
+    }
+
+    .home-heading h1{
+        top: 50%;
+        left: 50%;
+        padding-top: 60px;
+        padding-left: 30px;
+        padding-bottom: 30px;
+        text-align: left;
+        font-weight: 200;
+    }
+
+    .desktop-title{
+        margin: 0;
+        width: 55vw;
     }
 
     #mobile-nav{
@@ -1589,9 +1687,18 @@
     }
 
     #desktop-nav {
-        text-align: right; /* Align the menu to the right */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
-    
+
+    #desktop-menu{
+        position: absolute;
+        top: 25px;
+        right: 0;
+        padding-right: 15px;
+    }
+
     #desktop-menu ul {
         list-style: none;
         padding: 0;
@@ -1652,16 +1759,6 @@
         height: auto;
     }
 
-    .home-heading h1{
-        top: 50%;
-        left: 50%;
-        padding-top: 60px;
-        padding-left: 30px;
-        padding-bottom: 30px;
-        text-align: left;
-        font-weight: 200;
-    }
-
     .bold-name{
         font-weight: bold;
     }
@@ -1701,13 +1798,13 @@
       
         &:before {
           right: -3px;
-          bottom: -3.4px;
+          bottom: -4px;
           transform: rotate(-46deg);
         }
       
         &:after {
           right: -3px;
-          top: -3.4px;
+          top: -4px;
           transform: rotate(46deg);
         }
     }
@@ -1745,6 +1842,10 @@
         color:#757575 ;
         text-decoration: none;
     }
+
+    #blog-posts-heading{
+        padding-left: 10px;
+    }
     
     /* Style for blog post images */
     .blog-post-image , .about-post-image {
@@ -1773,7 +1874,6 @@
     
     .post-content h1 {
         text-align: center; /* Align the title to the left */
-        padding-left: 10px; /* Add left padding */
         margin-top: 10px; /* Add top margin to separate from the image */
     }
         
@@ -1973,8 +2073,22 @@
         height: 6vh;
         z-index: 1;
         width: 100%;
-        justify-content: right;
         align-items: center;
+    }
+
+    .home-heading h1{
+        top: 50%;
+        left: 50%;
+        padding-top: 60px;
+        padding-left: 30px;
+        padding-bottom: 30px;
+        text-align: left;
+        font-weight: 200;
+    }
+
+    .desktop-title{
+        margin: 0;
+        width: 70vw;
     }
 
     #mobile-nav{
@@ -1982,7 +2096,16 @@
     }
 
     #desktop-nav {
-        text-align: right; /* Align the menu to the right */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #desktop-menu{
+        position: absolute;
+        top: 35px;
+        right: 0;
+        padding-right: 15px;
     }
     
     #desktop-menu ul {
@@ -2126,6 +2249,10 @@
         text-align: center;
         text-decoration: none;
         max-width: 20%;
+    }
+
+    #blog-posts-heading{
+        padding-left: 10px;
     }
     
     .blog-post-link , .about-post-link{
