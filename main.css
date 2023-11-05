@@ -179,6 +179,15 @@
     .arrow:hover {
         color: #717272; /*rgb(123, 124, 124) color on hover */
     }
+    
+    .blog-post{
+        border: 1px solid #ccc;
+        border-radius: 2px;
+        height: auto;
+        text-align: center;
+        text-decoration: none;
+        max-width: 60%;
+    }
      
     .mobile-links {
         display: flex;
@@ -188,7 +197,10 @@
         padding-bottom: 80px;
     }
 
-    .blog-post-box,
+    .blog-post-box{
+        display: none;
+    }
+
     .about-post-box-mobile {
         border: 1px solid #ccc;
         border-radius: 2px;
@@ -196,7 +208,7 @@
         height: auto;
         text-align: center;
         text-decoration: none;
-        max-width: 35%;
+        max-width: 45%;
     }
 
     .about-post-box-mobile{
@@ -603,6 +615,15 @@
 
     .arrow:hover {
         color: #717272; /*rgb(123, 124, 124) color on hover */
+    }
+
+    .blog-post{
+        border: 1px solid #ccc;
+        border-radius: 2px;
+        height: auto;
+        text-align: center;
+        text-decoration: none;
+        max-width: 50%;
     }
      
     .mobile-links {
@@ -1021,6 +1042,15 @@
     .arrow:hover {
         color: #717272; /*rgb(123, 124, 124) color on hover */
     }
+
+    .blog-post{
+        border: 1px solid #ccc;
+        border-radius: 2px;
+        height: auto;
+        text-align: center;
+        text-decoration: none;
+        max-width: 40%;
+    }
      
     .mobile-links {
         display: flex;
@@ -1046,7 +1076,7 @@
     }
 
     #blog-posts-heading{
-        padding-left: 10px;
+        padding-left: 0px;
     }
     
     .blog-post-link , .about-post-link{
@@ -1293,6 +1323,7 @@
     .desktop-title{
         margin: 0;
         width: 40vw;
+        padding-top: 20px;
     }
 
     .bold-name{
@@ -1311,7 +1342,7 @@
 
     #desktop-menu{
         position: absolute;
-        top: 15px;
+        top: 50px;
         right: 0;
         padding-right: 15px;
     }
@@ -1409,6 +1440,15 @@
     .arrow:hover {
         color: #717272; /*rgb(123, 124, 124) color on hover */
     }
+
+    .blog-post{
+        border: 1px solid #ccc;
+        border-radius: 2px;
+        height: auto;
+        text-align: center;
+        text-decoration: none;
+        max-width: 30%;
+    }
      
     .mobile-links {
         display: flex;
@@ -1434,7 +1474,7 @@
     }
 
     #blog-posts-heading{
-        padding-left: 10px;
+        padding-left: 0px;
     }
     
     .blog-post-link , .about-post-link{
@@ -1804,6 +1844,15 @@
     .arrow:hover {
         color: #717272; /*rgb(123, 124, 124) color on hover */
     }
+
+    .blog-post{
+        border: 1px solid #ccc;
+        border-radius: 2px;
+        height: auto;
+        text-align: center;
+        text-decoration: none;
+        max-width: 20%;
+    }
      
     .mobile-links {
         display: flex;
@@ -1835,7 +1884,7 @@
     }
 
     #blog-posts-heading{
-        padding-left: 10px;
+        padding-left: 0px;
     }
     
     /* Style for blog post images */
@@ -2222,6 +2271,15 @@
     .arrow:hover {
         color: #717272; /*rgb(123, 124, 124) color on hover */
     }
+
+    .blog-post{
+        border: 1px solid #ccc;
+        border-radius: 2px;
+        height: auto;
+        text-align: center;
+        text-decoration: none;
+        max-width: 20%;
+    }
      
     .mobile-links {
         display: flex;
@@ -2243,7 +2301,7 @@
     }
 
     #blog-posts-heading{
-        padding-left: 10px;
+        padding-left: 0px;
     }
     
     .blog-post-link , .about-post-link{
