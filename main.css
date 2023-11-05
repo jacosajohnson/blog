@@ -1364,6 +1364,11 @@
         font-weight: bold;
         font-size: 1.5rem;
     }
+
+    .active-page{
+        border-bottom: 1px solid black;
+        padding-bottom: 2px;
+    }
     
     section {
         padding: 2rem;
@@ -1754,6 +1759,11 @@
         text-decoration: none;
         color: #000000;
         font-size: 1.5rem;
+    }
+
+    .active-page{
+        border-bottom: 1px solid black;
+        padding-bottom: 2px;
     }
     
     section {
@@ -2163,6 +2173,11 @@
         text-decoration: none;
         color: #000000;
         font-size: 1.5rem;
+    }
+
+    .active-page{
+        border-bottom: 1px solid black;
+        padding-bottom: 2px;
     }
     
     section {
